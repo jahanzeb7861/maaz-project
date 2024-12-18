@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Mail;
 
 function systemDetails()
 {
-    $system['name'] = 'ptclab';
+    $system['name'] = 'CellNow';
     $system['version'] = '1.1';
     return $system;
 }

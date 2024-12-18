@@ -19,7 +19,7 @@
                     </a>
                 </li>
 
-                <li class="sidebar-menu-item {{ menuActive('admin.referrals') }}">
+                <!-- <li class="sidebar-menu-item {{ menuActive('admin.referrals') }}">
                     <a href="{{ route('admin.referrals') }}" class="nav-link">
                         <i class="las la-tree menu-icon"></i>
                         <span class="menu-title">@lang('Ref Commission') </span>
@@ -39,7 +39,7 @@
                         <i class="las la-tags menu-icon"></i>
                         <span class="menu-title">@lang('Membership Plan')</span>
                     </a>
-                </li>
+                </li> -->
 
                 <!-- <li class="sidebar-menu-item {{ menuActive('admin.ptc*') }}">
                     <a href="{{ route('admin.ptc.index') }}" class="nav-link">
@@ -125,7 +125,7 @@
                     </div>
                 </li>
 
-                <li class="sidebar-menu-item sidebar-dropdown">
+                <!-- <li class="sidebar-menu-item sidebar-dropdown">
                     <a href="javascript:void(0)" class="{{menuActive('admin.deposit*',3)}}">
                         <i class="menu-icon las la-credit-card"></i>
                         <span class="menu-title">@lang('Deposit System')</span>
@@ -248,7 +248,7 @@
 
                         </ul>
                     </div>
-                </li>
+                </li> -->
 
                 <li class="sidebar-menu-item sidebar-dropdown">
                     <a href="javascript:void(0)" class="{{menuActive('admin.ticket*',3)}}">
@@ -296,7 +296,7 @@
                 </li>
 
 
-                <li class="sidebar-menu-item sidebar-dropdown">
+                <!-- <li class="sidebar-menu-item sidebar-dropdown">
                     <a href="javascript:void(0)" class="{{menuActive('admin.report*',3)}}">
                         <i class="menu-icon la la-list"></i>
                         <span class="menu-title">@lang('Report') </span>
@@ -320,16 +320,16 @@
 
                         </ul>
                     </div>
-                </li>
+                </li> -->
 
-
+<!--
                 <li class="sidebar-menu-item  {{menuActive(['admin.language-manage','admin.language-key'])}}">
                     <a href="{{route('admin.language-manage')}}" class="nav-link"
                        data-default-url="{{ route('admin.language-manage') }}">
                         <i class="menu-icon las la-language"></i>
                         <span class="menu-title">@lang('Language') </span>
                     </a>
-                </li>
+                </li> -->
 
                 <li class="sidebar__menu-header">@lang('Settings')</li>
 
@@ -347,19 +347,19 @@
                     </a>
                 </li>
 
-                <li class="sidebar-menu-item {{menuActive('admin.plugin.index')}}">
+                <!-- <li class="sidebar-menu-item {{menuActive('admin.plugin.index')}}">
                     <a href="{{route('admin.plugin.index')}}" class="nav-link">
                         <i class="menu-icon las la-cogs"></i>
                         <span class="menu-title">@lang('Plugins')</span>
                     </a>
-                </li>
-
+                </li> -->
+<!--
                 <li class="sidebar-menu-item {{menuActive('admin.seo')}}">
                     <a href="{{route('admin.seo')}}" class="nav-link">
                         <i class="menu-icon las la-globe"></i>
                         <span class="menu-title">@lang('SEO')</span>
                     </a>
-                </li>
+                </li> -->
 
                 <li class="sidebar-menu-item sidebar-dropdown">
                     <a href="javascript:void(0)" class="{{menuActive('admin.email-template*',3)}}">
@@ -391,7 +391,7 @@
                         </ul>
                     </div>
                 </li>
-
+<!--
                 <li class="sidebar-menu-item sidebar-dropdown">
                     <a href="javascript:void(0)" class="{{menuActive('admin.sms-template*',3)}}">
                         <i class="menu-icon la la-mobile"></i>
@@ -413,16 +413,16 @@
                             </li>
                         </ul>
                     </div>
-                </li>
+                </li> -->
 
-                <li class="sidebar__menu-header">@lang('TEMPLATES')</li>
+                <!-- <li class="sidebar__menu-header">@lang('TEMPLATES')</li>
 
                 <li class="sidebar-menu-item {{menuActive('admin.frontend.templates')}}">
                     <a href="{{route('admin.frontend.templates')}}" class="nav-link ">
                         <i class="menu-icon la la-html5"></i>
                         <span class="menu-title">@lang('Active Template')</span>
                     </a>
-                </li>
+                </li> -->
 
 
                 <li class="sidebar__menu-header">@lang('PAGE BUILDER')</li>

@@ -5,239 +5,41 @@
 <section class="cmn-section">
     <div class="container">
         <div class="row cmn-text">
-
-            <!-- <div class="col-md-6 mb-30">
-                <div class="col-md-6 mb-30">
-                    <div class="col-md-6 mb-30">
-                        <div id="adsSlider" class="ads-slider">
-                            <div class="ad-slide">Content One  ....................</div>
-                            <div class="ad-slide">Content Two  .................... TWO</div>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div> -->
-
-            <div class="col-md-6 mb-30">
+            <div class="col-md-4 mb-30">
                 <div class="widget-two box--shadow2 b-radius--5 bg--white">
-                    <i class="fas fa-dollar-sign overlay-icon text--primary"></i>
+                    <i class="fas fa-shopping-cart overlay-icon text--primary"></i>
                     <div class="widget-two__icon b-radius--5 bg--primary">
-                        <i class="fas fa-dollar-sign"></i>
+                        <i class="fas fa-shopping-cart"></i>
                     </div>
                     <div class="widget-two__content">
-                        <h2 class="bal">{{ $user->balance + 0 }} {{ $general->cur_text }}</h2>
-                        <p>@lang('My Balance') <a href="{{ route('user.withdraw') }}"
-                                class="btn cmn-btn">@lang('Withdraw Now')<i class="fas fa-arrow-circle-right"></i></a>
-                        </p>
+                        <h2 class="bal">{{ $user->balance + 0 }} </h2>
+                        <p>@lang('My Orders')</p>
                     </div>
                 </div><!-- widget-two end -->
             </div>
-            <div class="col-md-6 mb-30">
+            <div class="col-md-4 mb-30">
                 <div class="widget-two box--shadow2 b-radius--5 bg--white">
                     <i class="fas fa-tags overlay-icon text--primary"></i>
                     <div class="widget-two__icon b-radius--5 bg--primary">
                         <i class="fas fa-tags"></i>
                     </div>
                     <div class="widget-two__content">
-                        <h2 class="">{{ __($user->plan ? $user->plan->name : 'No Plan') }}</h2>
-                        <!-- <p>@lang('My Plan') <a href="{{ route('user.plans') }}" class="btn cmn-btn">@lang('Upgrade Now')<i class="fas fa-arrow-circle-right"></i></a></p> -->
+                        <h2 class="">{{ __($user->plan ? $user->plan->name : 'Coupon') }}</h2>
                     </div>
                 </div><!-- widget-two end -->
             </div>
-
-            <div class="col-md-6 mb-30">
+            <div class="col-md-4 mb-30">
                 <div class="widget-two box--shadow2 b-radius--5 bg--white">
                     <i class="fas fa-tags overlay-icon text--primary"></i>
                     <div class="widget-two__icon b-radius--5 bg--primary">
                         <i class="fas fa-tags"></i>
                     </div>
                     <div class="widget-two__content">
-                        <h2 class="">{{ __($user->rank ? $user->rank: 'PAID') }}</h2>
-                        <!-- <p>@lang('My Plan') <a href="{{ route('user.plans') }}" class="btn cmn-btn">@lang('Upgrade Now')<i class="fas fa-arrow-circle-right"></i></a></p> -->
+                        <h2 class="">Statistics</h2>
                     </div>
                 </div><!-- widget-two end -->
             </div>
 
-            <div class="col-md-6 mb-30">
-                <div class="widget-two box--shadow2 b-radius--5 bg--white">
-                    <i class="fas fa-dollar-sign overlay-icon text--primary"></i>
-                    <div class="widget-two__icon b-radius--5 bg--primary">
-                        <i class="fas fa-dollar-sign"></i>
-                    </div>
-                    <div class="widget-two__content">
-                        <h2 class="bal">{{ $user->r_wallet + 0 }} {{ $general->cur_text }}</h2>
-                        <p>R Wallet
-                        </p>
-                    </div>
-                </div><!-- widget-two end -->
-            </div>
-            <div class="col-md-6 mb-30">
-                <div class="widget-two box--shadow2 b-radius--5 bg--white">
-                    <i class="fas fa-dollar-sign overlay-icon text--primary"></i>
-                    <div class="widget-two__icon b-radius--5 bg--primary">
-                        <i class="fas fa-dollar-sign"></i>
-                    </div>
-                    <div class="widget-two__content">
-                        <h2 class="bal">{{ $user->points + 0 }} {{ $general->cur_text }}</h2>
-                        <p>Points
-                        </p>
-                    </div>
-                </div><!-- widget-two end -->
-            </div>
-            <!-- <div class="col-lg-8 col-md-12 mb-30">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">@lang('Click & Earn Report')</h5>
-                <div id="apex-bar-chart"></div>
-              </div>
-            </div>
-          </div> -->
-            <div class="col-lg-4 col-md-12 mb-30">
-                <div class="row">
-                    <div class="col-lg-12 col-md-6 mb-30">
-                        <div class="widget-three box--shadow2 b-radius--5 bg--white">
-                            <div class="widget-three__icon b-radius--rounded bg--primary">
-                                <i class="far fa-credit-card"></i>
-                            </div>
-                            <div class="widget-three__content">
-                                <h2 class="">{{ $user->deposits->sum('amount') + 0 }} {{ $general->cur_text }}</h2>
-                                <p>@lang('Total Deposit')</p>
-                                <a href="{{ route('user.deposit.history') }}" class="btn cmn-btn mt-2">@lang('Deposit
-                                    History ')<i class="fas fa-arrow-circle-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-12 col-md-6 mb-30">
-                        <div class="widget-three box--shadow2 b-radius--5 bg--white">
-                            <div class="widget-three__icon b-radius--rounded bg--primary">
-                                <i class="far fa-credit-card"></i>
-                            </div>
-                            <div class="widget-three__content">
-                                <p>Deposit Now</p>
-                                <a href="{{ route('user.deposit') }}" class="btn cmn-btn mt-2">Deposit Now<i class="fas fa-arrow-circle-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-12 col-md-6 mb-30">
-                        <div class="widget-three box--shadow2 b-radius--5 bg--white">
-                            <div class="widget-three__icon b-radius--rounded bg--primary">
-                                <i class="far fa-credit-card"></i>
-                            </div>
-                            <div class="widget-three__content">
-                                <p>Withdraw Now</p>
-                                <a href="{{ route('user.withdraw') }}" class="btn cmn-btn mt-2">Withdraw Now<i class="fas fa-arrow-circle-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-12 col-md-6 mb-30">
-                        <div class="widget-three box--shadow2 b-radius--5 bg--white">
-                            <div class="widget-three__icon b-radius--rounded bg--primary">
-                                <i class="far fa-credit-card"></i>
-                            </div>
-                            <div class="widget-three__content">
-                                <p>Transactions</p>
-                                <a href="{{ route('user.transactions') }}" class="btn cmn-btn mt-2">Transactions<i class="fas fa-arrow-circle-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-12 col-md-6 mb-30">
-                        <div class="widget-three box--shadow2 b-radius--5 bg--white">
-                            <div class="widget-three__icon b-radius--rounded bg--primary">
-                                <i class="far fa-credit-card"></i>
-                            </div>
-                            <div class="widget-three__content">
-                                <p>Courses</p>
-                                <a href="{{ route('user.plans') }}" class="btn cmn-btn mt-2">Courses<i class="fas fa-arrow-circle-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-12 col-md-6 mb-30">
-                        <div class="widget-three box--shadow2 b-radius--5 bg--white">
-                            <div class="widget-three__icon b-radius--rounded bg--primary">
-                                <i class="far fa-credit-card"></i>
-                            </div>
-                            <div class="widget-three__content">
-                                <p>Commissions</p>
-                                <a href="{{ route('user.commissions') }}" class="btn cmn-btn mt-2">Commissions<i class="fas fa-arrow-circle-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-12 col-md-6 mb-30">
-                        <div class="widget-three box--shadow2 b-radius--5 bg--white">
-                            <div class="widget-three__icon b-radius--rounded bg--primary">
-                                <i class="far fa-credit-card"></i>
-                            </div>
-                            <div class="widget-three__content">
-                                <p>Referred Users</p>
-                                <a href="{{ route('user.referred') }}" class="btn cmn-btn mt-2">Referred Users<i class="fas fa-arrow-circle-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-12 col-md-6 mb-30">
-                        <div class="widget-three box--shadow2 b-radius--5 bg--white">
-                            <div class="widget-three__icon b-radius--rounded bg--primary">
-                                <i class="far fa-credit-card"></i>
-                            </div>
-                            <div class="widget-three__content">
-                                <h2 class="">{{ $user->withdrawals->where('status',1)->sum('amount') + 0 }}
-                                    {{ $general->cur_text }}</h2>
-                                <p>@lang('Total Withdraw')</p>
-                                <a href="{{ route('user.withdraw.history') }}" class="btn cmn-btn mt-2">@lang('Withdraw
-                                    History ')<i class="fas fa-arrow-circle-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- <a href="{{ route('user.ptc.clicks') }}" class="col-lg-6 col-md-12 mb-30">
-              <div class="widget bb--3 border--success b-radius--10 bg--white p-4 box--shadow2">
-              <div class="widget__icon b-radius--rounded bg--success"><i class="fas fa-mouse-pointer"></i></div>
-              <div class="widget__content">
-                <p class="text-uppercase text-muted mb-0">@lang('Reward Balance')</p>
-                <h2 class="text--success font-weight-bold">{{ $user->clicks->count() }}</h2>
-              </div>
-              <div class="widget__arrow">
-                <i class="fas fa-chevron-right"></i>
-              </div>
-            </div>
-          </a>
-          <a href="{{ route('user.ptc.index') }}" class="col-lg-6 col-md-12 mb-30">
-              <div class="widget bb--3 border--success b-radius--10 bg--white p-4 box--shadow2">
-              <div class="widget__icon b-radius--rounded bg--success"><i class="fas fa-calendar-alt"></i></div>
-              <div class="widget__content">
-                <p class="text-uppercase text-muted mb-0">@lang('Remain clicks for today')</p>
-                <h2 class="text--success font-weight-bold">{{ $user->dpl - $user->clicks->where('vdt',Date('Y-m-d'))->count() }}</h2>
-              </div>
-              <div class="widget__arrow">
-                <i class="fas fa-chevron-right"></i>
-              </div>
-            </div>
-          </a>
-          <a href="{{ route('user.ptc.clicks') }}" class="col-lg-6 col-md-12 mb-30">
-              <div class="widget bb--3 border--success b-radius--10 bg--white p-4 box--shadow2">
-              <div class="widget__icon b-radius--rounded bg--success"><i class="fas fa-mouse-pointer"></i></div>
-              <div class="widget__content">
-                <p class="text-uppercase text-muted mb-0">@lang("Reward Bonus")</p>
-                <h2 class="text--success font-weight-bold">{{ $user->clicks->where('vdt',Date('Y-m-d'))->count() }}</h2>
-              </div>
-              <div class="widget__arrow">
-                <i class="fas fa-chevron-right"></i>
-              </div>
-            </div>
-          </a>
-          <a href="javascript:void(0)" class="col-lg-6 col-md-12 mb-30">
-              <div class="widget bb--3 border--success b-radius--10 bg--white p-4 box--shadow2">
-              <div class="widget__icon b-radius--rounded bg--success"><i class="fas fa-stopwatch"></i></div>
-              <div class="widget__content">
-                <p class="text-uppercase text-muted mb-0">@lang('Next Reminder')</p>
-                <h2 class="text--success font-weight-bold timer" id="counter"></h2>
-              </div>
-              <div class="widget__arrow">
-                <i class="fas fa-chevron-right"></i>
-              </div>
-            </div>
-          </a> -->
         </div>
     </div>
 </section>

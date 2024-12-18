@@ -83,7 +83,7 @@
                 </div>
             </div>
         </div><!-- dashboard-w1 end -->
-        <div class="col-xl-3 col-lg-4 col-sm-6 mb-30">
+        <!-- <div class="col-xl-3 col-lg-4 col-sm-6 mb-30">
             <div class="dashboard-w1 bg--gradi-21 b-radius--10 box-shadow ">
                 <div class="icon">
                     <i class="fa fa-shopping-cart"></i>
@@ -99,12 +99,13 @@
                     <a href="{{route('admin.users.smsVerified')}}" class="btn btn-sm text--small bg--white text--black box--shadow3 mt-3">@lang('View All')</a>
                 </div>
             </div>
-        </div><!-- dashboard-w1 end -->
-        
+        </div> -->
+        <!-- dashboard-w1 end -->
+
     </div><!-- row end-->
 
 
-    <div class="row mt-50 mb-none-30">
+    <!-- <div class="row mt-50 mb-none-30">
         <div class="col-xl-6 mb-30">
             <div class="card">
                 <div class="card-body">
@@ -124,7 +125,7 @@
                             <h2 class="numbers">{{$payment['payment_method']}}</h2>
                             <p  class="text--small">@lang('Total Payment Method')</p>
                         </div>
-                    </div><!-- widget-two end -->
+                    </div>
                 </div>
                 <div class="col-lg-6 col-sm-6 mb-30">
                     <div class="widget-three box--shadow2 b-radius--5 bg--white">
@@ -135,7 +136,7 @@
                             <h2 class="numbers">{{getAmount($payment['total_deposit_amount'])}} {{$general->cur_text}}</h2>
                             <p class="text--small">@lang('Total Deposit')</p>
                         </div>
-                    </div><!-- widget-two end -->
+                    </div>
                 </div>
                 <div class="col-lg-6 col-sm-6 mb-30">
                     <div class="widget-three box--shadow2 b-radius--5 bg--white">
@@ -146,7 +147,7 @@
                             <h2 class="numbers">{{getAmount($payment['total_deposit_charge'])}} {{$general->cur_text}}</h2>
                             <p class="text--small">@lang('Total Deposit Charge')</p>
                         </div>
-                    </div><!-- widget-two end -->
+                    </div>
                 </div>
                 <div class="col-lg-6 col-sm-6 mb-30">
                     <div class="widget-three box--shadow2 b-radius--5 bg--white">
@@ -157,14 +158,15 @@
                             <h2 class="numbers">{{$payment['total_deposit_pending']}}</h2>
                             <p class="text--small">@lang('Pending Deposit')</p>
                         </div>
-                    </div><!-- widget-two end -->
+                    </div>
                 </div>
             </div>
         </div>
-    </div><!-- row end -->
+    </div> -->
+    <!-- row end -->
 
 
-    <div class="row mt-50 mb-none-30">
+    <!-- <div class="row mt-50 mb-none-30">
         <div class="col-xl-3 col-lg-6 col-sm-6 mb-30">
             <div class="dashboard-w1 bg--gradi-46 b-radius--10 box-shadow" >
                 <div class="icon">
@@ -180,10 +182,10 @@
                     <a href="{{route('admin.withdraw.method.index')}}" class="btn btn-sm text--small bg--white text--black box--shadow3 mt-3">@lang('View All')</a>
                 </div>
             </div>
-        </div>
+        </div> -->
 
 
-        <div class="col-xl-3 col-lg-6 col-sm-6 mb-30">
+        <!-- <div class="col-xl-3 col-lg-6 col-sm-6 mb-30">
             <div class="dashboard-w1 bg--gradi-28 b-radius--10 box-shadow" >
                 <div class="icon">
                     <i class="fa fa-hand-holding-usd"></i>
@@ -199,9 +201,9 @@
                     <a href="{{route('admin.withdraw.approved')}}" class="btn btn-sm text--small bg--white text--black box--shadow3 mt-3">@lang('View All')</a>
                 </div>
             </div>
-        </div>
+        </div> -->
 
-        <div class="col-xl-3 col-lg-6 col-sm-6 mb-30">
+        <!-- <div class="col-xl-3 col-lg-6 col-sm-6 mb-30">
             <div class="dashboard-w1 bg--gradi-48 b-radius--10 box-shadow" >
                 <div class="icon">
                     <i class="fa fa-money-bill-alt"></i>
@@ -218,9 +220,9 @@
                     <a href="{{route('admin.withdraw.approved')}}" class="btn btn-sm text--small bg--white text--black box--shadow3 mt-3">@lang('View All')</a>
                 </div>
             </div>
-        </div>
+        </div> -->
 
-        <div class="col-xl-3 col-lg-6 col-sm-6 mb-30">
+        <!-- <div class="col-xl-3 col-lg-6 col-sm-6 mb-30">
             <div class="dashboard-w1 bg--gradi-39 b-radius--10 box-shadow">
                 <div class="icon">
                     <i class="fa fa-spinner"></i>
@@ -236,13 +238,13 @@
                     <a href="{{route('admin.withdraw.pending')}}" class="btn btn-sm text--small bg--white text--black box--shadow3 mt-3">@lang('View All')</a>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 
 
     <div class="row mb-none-30 mt-5">
 
-        <div class="col-xl-6 mb-30">
+        <div class="col-xl-12 mb-30">
             <div class="card ">
                 <div class="card-header">
                     <h6 class="card-title mb-0">@lang('New User list')</h6>
@@ -288,14 +290,14 @@
             </div><!-- card end -->
         </div>
 
-        <div class="col-xl-6 mb-30">
+        <!-- <div class="col-xl-6 mb-30">
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">@lang('Last 30 days Withdraw History')</h5>
                     <div id="withdraw-line"></div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
 
     </div>
@@ -339,7 +341,7 @@
 
         (function($){
             "use strict";
-            
+
                 // apex-bar-chart js
                 var options = {
                     series: [{
