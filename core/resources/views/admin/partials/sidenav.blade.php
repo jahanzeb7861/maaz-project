@@ -74,6 +74,7 @@
                                     <span class="menu-title">@lang('Active Users')</span>
                                 </a>
                             </li>
+
                             <li class="sidebar-menu-item {{menuActive('admin.users.banned')}} ">
                                 <a href="{{route('admin.users.banned')}}" class="nav-link">
                                     <i class="menu-icon las la-dot-circle"></i>
@@ -96,7 +97,7 @@
                                 </a>
                             </li>
 
-                            <li class="sidebar-menu-item {{menuActive('admin.users.smsUnverified')}}">
+                            <!-- <li class="sidebar-menu-item {{menuActive('admin.users.smsUnverified')}}">
                                 <a href="{{route('admin.users.smsUnverified')}}" class="nav-link">
                                     <i class="menu-icon las la-dot-circle"></i>
                                     <span class="menu-title">@lang('SMS Unverified')</span>
@@ -105,7 +106,7 @@
                                             class="menu-badge pill bg--primary ml-auto">{{$sms_unverified_users_count}}</span>
                                     @endif
                                 </a>
-                            </li>
+                            </li> -->
 
                             <li class="sidebar-menu-item {{menuActive('admin.users.login.history')}}">
                                 <a href="{{route('admin.users.login.history')}}" class="nav-link">
@@ -114,12 +115,12 @@
                                 </a>
                             </li>
 
-                            <li class="sidebar-menu-item {{menuActive('admin.users.email.all')}}">
+                            <!-- <li class="sidebar-menu-item {{menuActive('admin.users.email.all')}}">
                                 <a href="{{route('admin.users.email.all')}}" class="nav-link">
                                     <i class="menu-icon las la-dot-circle"></i>
                                     <span class="menu-title">@lang('Send Email')</span>
                                 </a>
-                            </li>
+                            </li> -->
 
                         </ul>
                     </div>

@@ -15,7 +15,7 @@
                                 <th scope="col">@lang('Username')</th>
                                 <th scope="col">@lang('Email')</th>
                                 <th scope="col">@lang('Phone')</th>
-                                <th scope="col">@lang('Action')</th>
+                                <!-- <th scope="col">@lang('Action')</th> -->
                             </tr>
                             </thead>
                             <tbody>
@@ -27,14 +27,14 @@
                                         <span class="name">{{$user->fullname}}</span>
                                     </div>
                                 </td>
-                                <td data-label="@lang('Username')"><a href="{{ route('admin.users.detail', $user->id) }}">{{ $user->username }}</a></td>
+                                <td data-label="@lang('Username')"><a href="#">{{ $user->username }}</a></td>
                                 <td data-label="@lang('Email')">{{ $user->email }}</td>
                                 <td data-label="@lang('Phone')">{{ $user->mobile }}</td>
-                                <td data-label="@lang('Action')">
+                                <!-- <td data-label="@lang('Action')">
                                     <a href="{{ route('admin.users.detail', $user->id) }}" class="icon-btn" data-toggle="tooltip" title="" data-original-title="Details">
                                         <i class="las la-desktop text--shadow"></i>
                                     </a>
-                                </td>
+                                </td> -->
                             </tr>
                             @empty
                                 <tr>

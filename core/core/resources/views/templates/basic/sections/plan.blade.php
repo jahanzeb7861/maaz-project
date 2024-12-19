@@ -12,9 +12,9 @@
                         </div>
                     </div>
                 </div>
-        
+
                 <div class="row">
-        
+
                     <div class="col-xl-12 col-lg-12">
                         <div class="row justify-content-center">
                             @foreach($plans as $plan)
@@ -26,20 +26,20 @@
                                     </div>
                                     <div class="part-bottom">
                                         <ul>
-                                            <li>@lang('Plan Details')</li>
+                                            <li>@lang('Product Details')</li>
                                             <li>@lang('Daily Limit') : {{ $plan->daily_limit }} @lang('PTC')</li>
-                                            <li>@lang('Referral Bonus') : @lang('Upto') {{ $plan->ref_level }} @lang('Level')</li>
-                                            <li>@lang('Plan Price') : {{ getAmount($plan->price) }} {{ __($general->cur_text) }}</li>
+                                            <li>@lang('Lorem Ipsum') :  </li>
+                                            <li>@lang('Product Price') : {{ getAmount($plan->price) }} {{ __($general->cur_text) }}</li>
                                             <li>@lang('Validity') : @lang('Life Time')</li>
                                         </ul>
                                         @if(auth()->check())
                                             @if(auth()->user()->plan_id == $plan->id)
                     						<button disabled>@lang('Current Plan')</button>
                     						@else
-                    						<button class="buyBtn" data-id="{{ $plan->id }}">@lang('Subscribe Now')</button>
+                    						<button>  @lang('Purchase Now')</button>
                     						@endif
                                         @else
-                                            <button class="buyBtn" data-id="{{ $plan->id }}">@lang('Subscribe Now')</button>
+                                            <button>  @lang('Purchase Now')</button>
                                         @endif
                                     </div>
                                 </div>

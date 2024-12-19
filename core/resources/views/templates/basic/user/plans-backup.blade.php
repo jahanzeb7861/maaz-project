@@ -17,10 +17,9 @@
                                 </div>
                                 <div class="part-bottom">
                                     <ul>
-                                        <li>@lang('Plan Details')</li>
-                                        <li>1 PSN = 100 RS</li>
-                                        <li>@lang('Referral Bonus') : @lang('Upto') {{ $plan->ref_level }} @lang('Level')</li>
-                                        <li>@lang('Plan Price') : {{ getAmount($plan->price) }} {{ __($general->cur_text) }}</li>
+                                        <li>@lang('Product Details')</li>
+                                        <li>@lang('Lorem Ipsum') :  </li>
+                                        <li>@lang('Product Price') : {{ getAmount($plan->price) }} {{ __($general->cur_text) }}</li>
                                         <li>@lang('Validity') : @lang('Life Time')</li>
                                     </ul>
                                     <button disabled>@lang('Current Plan')</button>
@@ -37,13 +36,12 @@
                                         </div>
                                         <div class="part-bottom">
                                             <ul>
-                                                <li>@lang('Plan Details')</li>
-                                                <li>1 PSN = 100 RS</li>
-                                                <li>@lang('Referral Bonus') : @lang('Upto') {{ $plan->ref_level }} @lang('Level')</li>
-                                                <li>@lang('Plan Price') : {{ getAmount($plan->price) }} {{ __($general->cur_text) }}</li>
+                                                <li>@lang('Product Details')</li>
+                                                <li>@lang('Lorem Ipsum') :  </li>
+                                                <li>@lang('Product Price') : {{ getAmount($plan->price) }} {{ __($general->cur_text) }}</li>
                                                 <li>@lang('Validity') : @lang('Life Time')</li>
                                             </ul>
-                                            <button class="buyBtn" data-id="{{ $plan->id }}">@lang('Subscribe Now')</button>
+                                            <button>  @lang('Purchase Now')</button>
                                         </div>
                                     </div>
                             </div>
