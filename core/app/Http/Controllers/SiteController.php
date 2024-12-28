@@ -23,7 +23,7 @@ class SiteController extends Controller
             $in['slug'] = 'home';
             Page::create($in);
         }
-        
+
         $data['page_title'] = 'Home';
         $data['sections'] = Page::where('tempname',$activeTemplate)->where('slug','home')->firstOrFail();
         return view($activeTemplate . 'home', $data);
@@ -72,7 +72,37 @@ class SiteController extends Controller
         return view($activeTemplate . 'about', $data);
     }
 
-    
+    public function faqs()
+    {
+        $activeTemplate = activeTemplate();
+        $count = Page::where('tempname',$activeTemplate)->where('slug','faq')->count();
+        if($count == 0){
+            $in['tempname'] = $activeTemplate;
+            $in['name'] = 'FAQ';
+            $in['slug'] = 'faq';
+            Page::create($in);
+        }
+        $data['page_title'] = 'FAQ';
+        $data['sections'] = Page::where('tempname',$activeTemplate)->where('slug','faq')->firstOrFail();
+        return view($activeTemplate . 'faqs', $data);
+    }
+
+    public function cart()
+    {
+        $activeTemplate = activeTemplate();
+        $count = Page::where('tempname',$activeTemplate)->where('slug','cart')->count();
+        if($count == 0){
+            $in['tempname'] = $activeTemplate;
+            $in['name'] = 'Cart';
+            $in['slug'] = 'cart';
+            Page::create($in);
+        }
+        $data['page_title'] = 'FAQ';
+        $data['sections'] = Page::where('tempname',$activeTemplate)->where('slug','cart')->firstOrFail();
+        return view($activeTemplate . 'cart', $data);
+    }
+
+
     public function pages($slug)
     {
         $activeTemplate = activeTemplate();

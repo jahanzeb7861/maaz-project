@@ -392,6 +392,8 @@ Route::name('user.')->prefix('user')->group(function () {
 });
 
 Route::get('/contact', 'SiteController@contact')->name('contact');
+Route::get('/faqs', 'SiteController@faqs')->name('faqs');
+Route::get('/cart', 'SiteController@cart')->name('cart');
 Route::post('/contact', 'SiteController@contactSubmit')->name('contact.send');
 Route::get('change-lang/{code}','SiteController@lang');
 

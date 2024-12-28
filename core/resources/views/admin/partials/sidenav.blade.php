@@ -362,7 +362,7 @@
                     </a>
                 </li> -->
 
-                <li class="sidebar-menu-item sidebar-dropdown">
+                <!-- <li class="sidebar-menu-item sidebar-dropdown">
                     <a href="javascript:void(0)" class="{{menuActive('admin.email-template*',3)}}">
                         <i class="menu-icon la la-envelope-o"></i>
                         <span class="menu-title">@lang('Email Manager')</span>
@@ -391,7 +391,7 @@
                             </li>
                         </ul>
                     </div>
-                </li>
+                </li> -->
 <!--
                 <li class="sidebar-menu-item sidebar-dropdown">
                     <a href="javascript:void(0)" class="{{menuActive('admin.sms-template*',3)}}">
@@ -426,15 +426,15 @@
                 </li> -->
 
 
-                <li class="sidebar__menu-header">@lang('PAGE BUILDER')</li>
+                <!-- <li class="sidebar__menu-header">@lang('PAGE BUILDER')</li>
 
                 <li class="sidebar-menu-item {{menuActive('admin.frontend.manage.pages')}}">
                     <a href="{{route('admin.frontend.manage.pages')}}" class="nav-link ">
                         <i class="menu-icon la la-list"></i>
                         <span class="menu-title">@lang('Manage Pages')</span>
                     </a>
-                </li>
-
+                </li> -->
+<!--
                 <li class="sidebar__menu-header">@lang('CONTENT MANAGER')</li>
 
                 <li class="sidebar-menu-item sidebar-dropdown">
@@ -464,13 +464,14 @@
 
                         </ul>
                     </div>
-                </li>
+                </li> -->
             </ul>
 
 
 
         <div class="text-center mb-3 text-uppercase">
-            <span class="text--primary">{{systemDetails()['name']}}</span>
+            <!-- <span class="text--primary">{{systemDetails()['name']}}</span> -->
+            <span class="text--primary">P&M Electronics</span>
             <span class="text--success">V{{systemDetails()['version']}} </span>
         </div>
 

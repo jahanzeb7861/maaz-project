@@ -16,12 +16,15 @@
     }
 
     if( !$color1 || !checkhexcolor1( $color1 ) ) {
-      $color1 = "#ea0117";
+      $color1 = "#1A84C4";
     }
 
     if( !$color2 || !checkhexcolor2( $color2 ) ) {
-      $color2 = "#ea0117";
+      $color2 = "#1A84C4";
     }
+    $color1 = "#1A84C4";
+    $color2 = "#1A84C4";
+
 ?>
 
 .price .single-price .part-top {

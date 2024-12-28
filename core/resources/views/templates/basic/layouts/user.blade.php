@@ -55,106 +55,103 @@
   <!-- scroll-to-top end -->
   <div class="page-wrapper">
       <!-- header-section start  -->
-  <header class="header">
-    <div class="header__top">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-sm-6">
-            <div class="left d-flex align-items-center">
-              <div class="language">
-                <i class="las la-globe-europe"></i>
-                <select id="langSel" class="nic-select">
-                  @php
-                  $langs = App\Language::all();
-                  @endphp
-                  @foreach($langs as $lang)
-                  <option value="{{$lang->code}}" @if(Session::get('lang') === $lang->code) selected  @endif>{{ __($lang->name) }}</option>
-                  @endforeach
-                </select>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6">
-            <div class="right text-sm-right text-center">
-              @guest
-              <a href="{{ route('user.login') }}"><i class="las la-sign-in-alt"></i> @lang('Login')</a>
-              <a href="{{ route('user.register') }}"><i class="las la-user-plus"></i> @lang('Registration')</a>
-              @else
-              <a href="{{ route('user.home') }}"><i class="las la-user-plus"></i> @lang('Dashboard')</a>
-              @endguest
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="header__bottom">
-      <div class="container">
-        <nav class="navbar navbar-expand-xl p-0 align-items-center">
-          <a class="site-logo site-title" href="{{ route('home') }}"><img src="{{ asset('assets/images/logoIcon/logo.png') }}" alt="site-logo"><span class="logo-icon"><i class="flaticon-fire"></i></span></a>
-          <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="menu-toggle"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            @guest
-            <ul class="navbar-nav main-menu ml-auto">
-              <li><a href="{{ route('home') }}">@lang('Home')</a></li>
-              @foreach($pages as $page)
-              @if($page->slug != 'home' && $page->slug != 'blog' && $page->slug != 'contact')
-              <li><a href="{{ route('home.pages',[$page->slug,$page->id]) }}">{{ __($page->name) }}</a></li>
-              @endif
-              @endforeach
-              <li><a href="{{ route('blog') }}">@lang('Blog')</a></li>
-            </ul>
-            <div class="nav-right">
-              <a href="{{ route('contact') }}" class="cmn-btn style--three">@lang('Contact')</a>
-            </div>
-            @else
-              <ul class="navbar-nav main-menu ml-auto">
-                <li><a href="{{ route('user.home') }}">@lang('Dashboard')</a></li>
-                <!-- <li class="menu_has_children"><a href="#0">@lang('Deposit')</a>
-                  <ul class="sub-menu">
-                    <li><a href="{{ route('user.deposit') }}">@lang('Deposit Now')</a></li>
-                    <li><a href="{{ route('user.deposit.history') }}">@lang('Deposit History')</a></li>
-                  </ul>
-                </li>
-                <li class="menu_has_children"><a href="#0">@lang('Withdraw')</a>
-                  <ul class="sub-menu">
-                    <li><a href="{{ route('user.withdraw') }}">@lang('Withdraw Now')</a></li>
-                    <li><a href="{{ route('user.withdraw.history') }}">@lang('Withdraw History')</a></li>
-                  </ul>
-                </li>
-                <li><a href="{{ route('user.plans') }}">@lang('Courses')</a></li> -->
-                <!-- <li class="menu_has_children"><a href="#0">@lang('PTC')</a>
-                  <ul class="sub-menu">
-                    <li><a href="{{ route('user.ptc.index') }}">@lang('Ads')</a></li>
-                    <li><a href="{{ route('user.ptc.clicks') }}">@lang('Clicks')</a></li>
-                  </ul>
-                </li> -->
-                <!-- <li><a href="{{ route('user.transactions') }}">@lang('Transactions')</a></li>
+      <header>
+		<div class="container">
+			<div class="row align-items-center py-3">
+				<div class="col-lg-2">
+					<div class="logo">
+						<a href="#">
+							<!-- <img src="assets/img/PM-Electronics-Logo-for-WordPress-03-1.png" alt="P&M ElectronicsStore"
+								class="img-fluid"> -->
+							<img src="{{getImage(imagePath()['logoIcon']['path'] .'/logo.png')}}" alt="P&M ElectronicsStore"
+								class="img-fluid">
+						</a>
+					</div>
+				</div>
+				<div class="col-lg-8">
+					<nav class="navbar navbar-expand-lg navbar-light">
+						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+							aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+							<span class="navbar-toggler-icon"></span>
+						</button>
+						<div class="collapse navbar-collapse" id="navbarNav">
+							<ul class="navbar-nav">
+								<li class="nav-item">
+									<a class="nav-link" href="https://sftechbuyer.com/">Home</a>
+								</li>
+								<li class="nav-item dropdown">
+									<a class="nav-link dropdown-toggle" href="https://sftechbuyer.com#sellSection"
+										id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
+										aria-haspopup="true" aria-expanded="false">
+										Sell
+									</a>
+									<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+										<a class="dropdown-item"
+											href="https://sftechbuyer.com/smartphone">Smartphone</a>
+										<a class="dropdown-item" href="https://sftechbuyer.com/tablet">Tablet</a>
+										<a class="dropdown-item"
+											href="https://sftechbuyer.com/smartwatch">SmartWatch</a>
+										<a class="dropdown-item"
+											href="https://sftechbuyer.com/headphones-airpods">Headphones</a>
+										<a class="dropdown-item" href="https://sftechbuyer.com/game-console">Game
+											Console</a>
+									</div>
+								</li>
+								<!-- <li class="nav-item">
+									<a class="nav-link" href="https://sell.cellnowstore.com/instant-sale">Instant Sell</a>
+								</li> -->
+								<li class="nav-item">
+									<a class="nav-link" href="https://sftechbuyer.com#why-us">Why us?</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="https://sftechbuyer.com#how-it-works">How it works?</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="https://sftechbuyer.com/faqs">F.A.Q.</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="#"
+										data-toggle="modal" data-target="#trackOrderForm">Track Order</a>
+								</li>
+							</ul>
+						</div>
+					</nav>
+				</div>
+				<div class="col-lg-2">
+					<div class="user-menu d-flex justify-content-center align-items-center">
+						<ul class="d-flex justify-content-center align-items-center">
+							<li class="nav-item dropdown" style="list-style: none;">
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+									data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									<i class="fas fa-user"></i>
+								</a>
+                                @guest
+								<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a href="{{ route('user.login') }}"><i class="las la-sign-in-alt"></i> @lang('Login')</a>
+                                    <br>
+                                    <a href="{{ route('user.register') }}"><i class="las la-user-plus"></i> @lang('Registration')</a>
+								</div>
+                                @else
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a href="{{ route('user.home') }}"><i class="las la-user-plus"></i> @lang('Dashboard')</a>
+                                    <a href="{{ route('user.logout') }}"><i class="las la-sign-out-alt"></i> @lang('Logout')</a>
+                                </div>
+                                @endguest
 
-                <li class="menu_has_children"><a href="#0">@lang('Referral')</a>
-                  <ul class="sub-menu">
-                    <li><a href="{{ route('user.commissions') }}">@lang('Commissions')</a></li>
-                    <li><a href="{{ route('user.referred') }}">@lang('Referred Users')</a></li>
-                  </ul>
-                </li> -->
-
-                <li class="menu_has_children"><a href="#0">@lang('Account')</a>
-                  <ul class="sub-menu">
-                    <li><a href="{{ route('user.profile') }}">@lang('Profile')</a></li>
-                    <li><a href="{{ route('user.password.change') }}">@lang('Change Password')</a></li>
-                    <li><a href="{{ route('ticket') }}">@lang('Support Ticket')</a></li>
-                    <!-- <li><a href="{{ route('user.twofactor') }}">@lang('Two Factor')</a></li> -->
-                    <li><a href="{{ route('user.logout') }}">@lang('Logout')</a></li>
-                  </ul>
-                </li>
-              </ul>
-            @endif
-          </div>
-        </nav>
-      </div>
-    </div>
-  </header>
+							</li>
+                            @auth
+							<li class="nav-item" style="list-style: none;">
+								<a class="nav-link" href="https://sftechbuyer.com/cart.php">
+									<i class="fas fa-shopping-bag"></i>
+								</a>
+							</li>
+                            @endauth
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
   <!-- header-section end  -->
 @yield('content')
 
@@ -165,9 +162,9 @@
       <hr>
       <div class="row">
         <div class="col-lg-8 col-md-6 text-md-left text-center">
-          <p><p>{{ __(getContent('copyright.content',true)->data_values->copyright) }}</p></p>
+          <p><p>Copyright © 2023 P&M Electronics All Rights Reserved.</p></p>
         </div>
-        <div class="col-lg-4 col-md-6 mt-md-0 mt-3">
+        <!-- <div class="col-lg-4 col-md-6 mt-md-0 mt-3">
           @php
             $links = getContent('footer_link.element');
           @endphp
@@ -176,7 +173,7 @@
             <li><a href="{{ route('links',[$link->id,slug($link->data_values->title)]) }}">{{ __($link->data_values->title) }}</a></li>
             @endforeach
           </ul>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>

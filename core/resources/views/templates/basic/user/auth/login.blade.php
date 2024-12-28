@@ -3,14 +3,14 @@
 @endphp
 @extends($activeTemplate .'layouts.master')
 @section('content')
-@include($activeTemplate.'breadcrumb')
+
     <section class="pt-120 pb-120">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-6">
             <div class="login-area">
               <h2 class="title mb-3">{{ __($loginCaption->data_values->heading) }}</h2>
-              <p>{{ __($loginCaption->data_values->subheading) }}</p>
+              <p>Welcome to {{$general->sitename}}</p>
               <form class="action-form mt-50 loginForm" action="{{ route('user.login') }}" method="post">
                 @csrf
                 <div class="form-group">
@@ -36,7 +36,7 @@
                 </div><!-- form-group end -->
                 @include('partials.custom-captcha')
                 <div class="form-group text-center">
-                  <button type="submit" class="cmn-btn rounded-0 w-100">@lang('Login Now')</button>
+                  <button type="submit" class="btn btn-primary cmn-btn rounded-0 w-100">@lang('Login Now')</button>
                   <p class="mt-20">@lang('Forget your password?') <a href="{{ route('user.password.request') }}">@lang('Reset password')</a></p>
                 </div>
               </form>

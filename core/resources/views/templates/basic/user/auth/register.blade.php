@@ -3,7 +3,6 @@
 @endphp
 @extends($activeTemplate .'layouts.master')
 @section('content')
-@include($activeTemplate.'breadcrumb')
     <section class="pt-120 pb-120">
       <div class="container">
         <div class="row justify-content-center">
@@ -13,10 +12,11 @@
               <p>{{ __($registerCaption->data_values->subheading) }}</p>
               <form class="action-form mt-50 loginForm" action="{{ route('user.register') }}" method="post">
                 @csrf
-                <div class="form-group">
+                <!-- <div class="form-group">
                   <label>@lang('Referred By')</label>
                   <input type="text" name="referral" class="form-control" autocomplete="off" autofocus="off" value="{{ $reference }}">
-                </div><!-- form-group end -->
+                </div> -->
+                <!-- form-group end -->
                 <div class="form-group">
                   <label>@lang('First Name')</label>
                   <input type="text" name="firstname" placeholder="@lang('First Name')" class="form-control" value="{{ old('firstname') }}">
@@ -73,7 +73,7 @@
                 </div><!-- form-group end -->
                 @include('partials.custom-captcha')
                 <div class="form-group text-center">
-                  <button type="submit" class="cmn-btn rounded-0 w-100">@lang('Register Now')</button>
+                  <button type="submit" class="btn btn-primary cmn-btn rounded-0 w-100">@lang('Register Now')</button>
                   <p class="mt-20">@lang('Already have an account?') <a href="{{ route('user.login') }}">@lang('Login Now')</a></p>
                 </div>
               </form>

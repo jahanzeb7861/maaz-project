@@ -21,7 +21,7 @@
                                 </div>
                             </div>
 
-                            <div class="col">
+                            <!-- <div class="col">
                                 <div class="form-group ">
                                     <label class="form-control-label font-weight-bold">@lang('Currency')</label>
                                     <input class="form-control  form-control-lg" type="text" name="cur_text"
@@ -35,11 +35,11 @@
                                     <input class="form-control  form-control-lg" type="text" name="cur_sym"
                                            value="{{$general->cur_sym}}">
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
 
                         <div class="row">
-                            <div class="form-group col-md-4">
+                            <!-- <div class="form-group col-md-4">
                                 <label class="form-control-label font-weight-bold"> @lang('Site Base Color')</label>
                                 <div class="input-group">
                                 <span class="input-group-addon ">
@@ -49,9 +49,9 @@
                                     <input type="text" class="form-control form-control-lg colorCode" name="base_color"
                                            value="{{ $general->base_color }}"/>
                                 </div>
-                            </div>
+                            </div> -->
 
-                            <div class="form-group col-md-4">
+                            <!-- <div class="form-group col-md-4">
                                 <label class="form-control-label font-weight-bold"> @lang('Site Secondary Color')</label>
                                 <div class="input-group">
                                 <span class="input-group-addon">
@@ -61,7 +61,7 @@
                                     <input type="text" class="form-control form-control-lg colorCode" name="secondary_color"
                                            value="{{ $general->secondary_color }}"/>
                                 </div>
-                            </div>
+                            </div> -->
 
 
                             <div class="form-group col">
@@ -76,9 +76,9 @@
                                 <label class="form-control-label font-weight-bold"> @lang('Email Verification')</label>
                                 <input type="checkbox" data-width="100%" data-size="large" data-onstyle="-success" data-offstyle="-danger" data-toggle="toggle" data-on="Enable" data-off="Disable" name="ev" @if($general->ev) checked @endif>
                             </div>
-                            <div class="form-group col-lg-6 col-sm-6 col-md-4">
+                            <!-- <div class="form-group col-lg-6 col-sm-6 col-md-4">
                                 <label class="form-control-label font-weight-bold">@lang('Email Notification')</label>
-                                <input type="checkbox" data-width="100%" data-size="large" data-onstyle="-success" data-offstyle="-danger" data-toggle="toggle" data-on="Enable" data-off="Disable" name="en" @if($general->en) checked @endif>
+                                <input type="checkbox" data-width="100%" data-size="large" data-onstyle="-success" data-offstyle="-danger" data-toggle="toggle" data-on="Enable" data-off="Disable" name="en" @if($general->en) checked @endif> -->
                             <!-- </div>
                             <div class="form-group col-lg-3 col-sm-6 col-md-4">
                                 <label class="form-control-label font-weight-bold"> @lang('SMS Verification')</label>

@@ -1,48 +1,37 @@
 @extends($activeTemplate .'layouts.user')
 @section('content')
-@include($activeTemplate.'breadcrumb')
 
-<section class="cmn-section">
-    <div class="container">
-        <div class="row cmn-text">
-            <div class="col-md-4 mb-30">
-                <div class="widget-two box--shadow2 b-radius--5 bg--white">
-                    <i class="fas fa-shopping-cart overlay-icon text--primary"></i>
-                    <div class="widget-two__icon b-radius--5 bg--primary">
-                        <i class="fas fa-shopping-cart"></i>
-                    </div>
-                    <div class="widget-two__content">
-                        <h2 class="bal">{{ $user->balance + 0 }} </h2>
-                        <p>@lang('My Orders')</p>
-                    </div>
-                </div><!-- widget-two end -->
-            </div>
-            <div class="col-md-4 mb-30">
-                <div class="widget-two box--shadow2 b-radius--5 bg--white">
-                    <i class="fas fa-tags overlay-icon text--primary"></i>
-                    <div class="widget-two__icon b-radius--5 bg--primary">
-                        <i class="fas fa-tags"></i>
-                    </div>
-                    <div class="widget-two__content">
-                        <h2 class="">{{ __($user->plan ? $user->plan->name : 'Coupon') }}</h2>
-                    </div>
-                </div><!-- widget-two end -->
-            </div>
-            <div class="col-md-4 mb-30">
-                <div class="widget-two box--shadow2 b-radius--5 bg--white">
-                    <i class="fas fa-tags overlay-icon text--primary"></i>
-                    <div class="widget-two__icon b-radius--5 bg--primary">
-                        <i class="fas fa-tags"></i>
-                    </div>
-                    <div class="widget-two__content">
-                        <h2 class="">Statistics</h2>
-                    </div>
-                </div><!-- widget-two end -->
-            </div>
-
+<div class="container p-5 d-flex flex-column" style="min-height: 75vh !important;">
+<div class="row mt-4 flex-grow-1">
+    <div class="col-md-3">
+        <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <a class="nav-link active" id="v-pills-orders-tab" data-toggle="pill" href="#v-pills-orders" role="tab" aria-controls="v-pills-orders" aria-selected="true">
+                <i class="fas fa-shopping-cart mr-2"></i>@lang('My Orders')
+            </a>
+            <a class="nav-link" id="v-pills-support-tab" data-toggle="pill" href="#v-pills-support" role="tab" aria-controls="v-pills-support" aria-selected="false">
+                <i class="fas fa-headset mr-2"></i>Support
+            </a>
+            <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">
+                <i class="fas fa-user mr-2"></i>Profile
+            </a>
         </div>
     </div>
-</section>
+    <div class="col-md-9">
+        <div class="tab-content" id="v-pills-tabContent">
+            <div class="tab-pane fade show active" id="v-pills-orders" role="tabpanel" aria-labelledby="v-pills-orders-tab">
+                <!-- Content for My Orders -->
+                 <h1>ORDERS SHOW HERE</h1>
+            </div>
+            <div class="tab-pane fade" id="v-pills-support" role="tabpanel" aria-labelledby="v-pills-support-tab">
+                <!-- Content for Coupon -->
+            </div>
+            <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                <!-- Content for Statistics -->
+            </div>
+        </div>
+    </div>
+</div>
+</div>
 @endsection
 @push('script')
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>

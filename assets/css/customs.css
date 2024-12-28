@@ -1,0 +1,7 @@
+.pac-container {
+	z-index: 10000 !important;
+}
+
+.m_validations_showhide {
+	color:red;
+}
