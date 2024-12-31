@@ -37,6 +37,62 @@ $banners = getContent('banner.element');
 
 
 
+<div class="wsus__author_category mt_95 xs_mt_55 p-5" style="background-color:#1A84C4; margin:0 !important;">
+    <div class="container py-3">
+        <div class="row">
+            <div class="col-xl-7 col-lg-8 m-auto">
+                <div class="wsus__section_heading mb_25">
+                    <h3 class="text-white">Choose your device's category to calculate best offer:</h3>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-xl-2 col-sm-6 col-lg-3 text-center my-4  mx-2"
+                style="    background: #fff;box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);padding: 20px;display: flex;border-radius: 10px;flex-direction: column;justify-content: center;">
+                <div class="img">
+                    <img src="https://sell.cellnowstore.com/images/categories/20191014045233.png"
+                        style="width: 20% !important; margin: 0 auto;" class="img-fluid">
+                </div>
+                <h4 class="my-3">Smart Phones</h4>
+            </div>
+            <div class="col-xl-2 col-sm-6 col-lg-3 text-center my-4  mx-2"
+                style="    background: #fff;box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);padding: 20px;display: flex;border-radius: 10px;flex-direction: column;justify-content: center;">
+                <div class="img">
+                    <img src="https://sell.cellnowstore.com/images/categories/20191012125938.png"
+                        style="width: 20% !important; margin: 0 auto;" class="img-fluid">
+                </div>
+                <h4 class="my-3">Tablets</h4>
+            </div>
+            <div class="col-xl-2 col-sm-6 col-lg-3 text-center my-4  mx-2"
+                style="    background: #fff;box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);padding: 20px;display: flex;border-radius: 10px;flex-direction: column;justify-content: center;">
+                <div class="img">
+                    <img src="https://sell.cellnowstore.com/images/categories/20191012130006.png"
+                        style="width: 20% !important; margin: 0 auto;" class="img-fluid">
+                </div>
+                <h4 class="my-3">Smart Watches</h4>
+            </div>
+            <div class="col-xl-2 col-sm-6 col-lg-3 text-center my-4  mx-2"
+                style="    background: #fff;box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);padding: 20px;display: flex;border-radius: 10px;flex-direction: column;justify-content: center;">
+                <div class="img">
+                    <img src="https://sell.cellnowstore.com/images/categories/20210829013733.png"
+                        style="width: 20% !important; margin: 0 auto;" class="img-fluid">
+                </div>
+                <h4 class="my-3">Headphones</h4>
+            </div>
+            <div class="col-xl-2 col-sm-6 col-lg-3 text-center my-4  mx-2"
+                style="    background: #fff;box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);padding: 20px;display: flex;border-radius: 10px;flex-direction: column;justify-content: center;">
+                <div class="img">
+                    <img src="https://sell.cellnowstore.com/images/categories/20191012130114.png"
+                        style="width: 20% !important; margin: 0 auto;" class="img-fluid">
+                </div>
+                <h4 class="my-3">Game Console</h4>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
 <section class="wsus__why_choose_3 wsus__why_choose_2 pt_115 xs_pt_75 pb_115 xs_pb_75">
     <div class="container">
         <div class="row">
@@ -82,59 +138,6 @@ $banners = getContent('banner.element');
     </div>
 </section>
 
-<div class="wsus__author_category mt_95 xs_mt_55" style="background-color:#1A84C4;">
-    <div class="container py-3">
-        <div class="row">
-            <div class="col-xl-7 col-lg-8 m-auto">
-                <div class="wsus__section_heading mb_25">
-                    <h3 class="text-white">Choose your device's category to calculate best offer:</h3>
-                </div>
-            </div>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-xl-3 col-sm-6 col-lg-4 text-center my-4  mx-2"
-                style="    background: #fff;box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);padding: 20px;display: flex;border-radius: 10px;flex-direction: column;justify-content: center;">
-                <div class="img">
-                    <img src="https://sell.cellnowstore.com/images/categories/20191014045233.png"
-                        style="width: 20% !important; margin: 0 auto;" class="img-fluid">
-                </div>
-                <h4 class="my-3">Smart Phones</h4>
-            </div>
-            <div class="col-xl-3 col-sm-6 col-lg-4 text-center my-4  mx-2"
-                style="    background: #fff;box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);padding: 20px;display: flex;border-radius: 10px;flex-direction: column;justify-content: center;">
-                <div class="img">
-                    <img src="https://sell.cellnowstore.com/images/categories/20191012125938.png"
-                        style="width: 20% !important; margin: 0 auto;" class="img-fluid">
-                </div>
-                <h4 class="my-3">Tablets</h4>
-            </div>
-            <div class="col-xl-3 col-sm-6 col-lg-4 text-center my-4  mx-2"
-                style="    background: #fff;box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);padding: 20px;display: flex;border-radius: 10px;flex-direction: column;justify-content: center;">
-                <div class="img">
-                    <img src="https://sell.cellnowstore.com/images/categories/20191012130006.png"
-                        style="width: 20% !important; margin: 0 auto;" class="img-fluid">
-                </div>
-                <h4 class="my-3">Smart Watches</h4>
-            </div>
-            <div class="col-xl-3 col-sm-6 col-lg-4 text-center my-4  mx-2"
-                style="    background: #fff;box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);padding: 20px;display: flex;border-radius: 10px;flex-direction: column;justify-content: center;">
-                <div class="img">
-                    <img src="https://sell.cellnowstore.com/images/categories/20210829013733.png"
-                        style="width: 20% !important; margin: 0 auto;" class="img-fluid">
-                </div>
-                <h4 class="my-3">Headphones</h4>
-            </div>
-            <div class="col-xl-3 col-sm-6 col-lg-4 text-center my-4  mx-2"
-                style="    background: #fff;box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);padding: 20px;display: flex;border-radius: 10px;flex-direction: column;justify-content: center;">
-                <div class="img">
-                    <img src="https://sell.cellnowstore.com/images/categories/20191012130114.png"
-                        style="width: 20% !important; margin: 0 auto;" class="img-fluid">
-                </div>
-                <h4 class="my-3">Game Console</h4>
-            </div>
-        </div>
-    </div>
-</div>
 
 
 
