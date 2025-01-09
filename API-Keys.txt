@@ -1,0 +1,5 @@
+Secret Key: sm89Bwi8bf0UPaDV4dtKKJjVbHXLkJiCYCoDKuqcZDsfUoMbggZ3W7Q7niGmb7S0
+
+Tenant ID: a395524ecd10937b12b14e7ff33ea54e6d4d0b21d67568f518163aac0056b26b
+
+Public API Key: khFohASwrgJm8oYSdfOaTZG7aq41mrzZg3GC8gsQbqAT7JzwHqDvorgbB13LadmN

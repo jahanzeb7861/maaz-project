@@ -4,7 +4,7 @@
     --fix_header_primary_bg : #FFFFFF;
     --fix_header_secondary_bg : #FFFFFF;
     /* --primary_color : #5c3f80; */
-    --primary_color : #1A84C4;
+    --primary_color : #3C97D3;
     --primary_text_color : #FFFFFF;
     /* --secondary_color : #8b49dc; */
     --secondary_color : #54595F;
@@ -15,20 +15,20 @@
     --secondary_hover_color : #57585C;
     --secondary_text_hover_color : #FFFFFF;
     /* --header_button_color : #aec433; */
-    --header_button_color : #1A84C4;
+    --header_button_color : #3C97D3;
     --header_button_text_color : #FFFFFF;
     --header_button_hover_color : #2F2F8A;
     --header_button_text_hover_color : #fff;
     --menu_color : #000000;
-    --menu_hover_color : #1A84C4;   
+    --menu_hover_color : #3C97D3;   
     --sub_menu_color : #000000;
     --sub_menu_hover_color : #000000;
     --sub_menu_background_color : #FFFFFF;
     --footer_background_color : #FFFFFF;
     --footer_second_background_color : #FFFFFF;
     --footer_text_color : #1A1A1A;
-    --footer_text_hover_color : #1A84C4;
-    --social_icons_background_color : #1A84C4;
+    --footer_text_hover_color : #3C97D3;
+    --social_icons_background_color : #3C97D3;
     --social_icons_background_hover_color : #FFFFFF;
     --social_icons_text_color : #FFFFFF;
     --social_icons_text_hover_color : #1A1A1A;

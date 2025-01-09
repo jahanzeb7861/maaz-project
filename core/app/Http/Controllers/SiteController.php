@@ -10,7 +10,7 @@ use App\SupportMessage;
 use App\SupportTicket;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 
 class SiteController extends Controller
 {
@@ -26,6 +26,10 @@ class SiteController extends Controller
 
         $data['page_title'] = 'Home';
         $data['sections'] = Page::where('tempname',$activeTemplate)->where('slug','home')->firstOrFail();
+
+        $data['categories'] = \DB::table('categories')->get();
+
+        // dd($data);
         return view($activeTemplate . 'home', $data);
     }
 
@@ -112,6 +116,81 @@ class SiteController extends Controller
         return view($activeTemplate . 'pages', $data);
     }
 
+    public function categoryPage($slug)
+    {
+        $activeTemplate = activeTemplate();
+
+        $category = DB::table('categories')->where('slug', $slug)->first();
+        if (!$category) {
+            abort(404);
+        }
+
+        $brands = DB::table('brands')->where('category_id', $category->id)->get();
+
+        // $data['page_title'] = 'FAQ';
+        // $data['sections'] = Page::where('tempname',$activeTemplate)->where('slug','faq')->firstOrFail();
+        return view('templates.basic.category', ['brands'=> $brands]);
+    }
+
+    public function brandPage($categorySlug,$brandSlug)
+    {
+        $category = DB::table('categories')->where('slug', $categorySlug)->first();
+        if (!$category) {
+            abort(404);
+        }
+
+        $brand = DB::table('brands')->where('category_id', $category->id)->where('slug', $brandSlug)->first();
+        if (!$brand) {
+            abort(404);
+        }
+
+        $models = DB::table('product_models')->where('category_id', $category->id)->where('brand_id', $brand->id)->get();
+
+        return view('templates.basic.models', ['models'=> $models]);
+    }
+
+    // placeOrder
+    public function placeOrder(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|max:255',
+            'email' => 'required|email|max:255',
+            'phone' => 'required|max:20',
+            'location' => 'required',
+            'brandId' => 'required',
+            'categoryId' => 'required',
+            'product_model_id' => 'required',
+        ]);
+
+
+        $order = DB::table('orders')->insert([
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'location' => $request->location,
+            'brand_id' => $request->brandId,
+            'category_id' => $request->categoryId,
+            'product_model_id' => $request->product_model_id,
+            'status' => 'Pending',
+            'created_at' => now(),
+        ]);
+
+        // return response()->json([
+        //     'success' => 'Order placed successfully!'
+        // ]);
+
+        if($order){
+            return response()->json([
+                'success' => 'Order placed successfully!'
+            ]);
+        } else {
+            return response()->json([
+                'error' => 'Failed to place order!'
+            ]);
+        }
+
+        return view('templates.basic.models', ['models'=> $models]);
+    }
 
     public function contact()
     {

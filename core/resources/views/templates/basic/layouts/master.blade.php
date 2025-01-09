@@ -6,6 +6,8 @@
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densityDpi=device-dpi" />
     <meta name="_token" content="{{ csrf_token() }}">
+     <meta name="content" id="content" content="P&M ElectronicsStore">
+    <title>P&M Electronics Store | Sell Everything</title>
     <meta name="csrf-token" id="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/bootstrap.min.css') }}">
@@ -16,6 +18,11 @@
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/price_range_ui.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/summernote.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/pricing-two.css') }}">
+
+
+     <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{{ asset('assets/favicon.jpg') }}"/>
+
 
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/bootstrap-tagsinput.css') }}">
 
@@ -42,7 +49,7 @@
     ==============================-->
     <nav class="navbar navbar-expand-lg main_menu main_menu_3">
         <div class="container">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="http://pmelectronics.net/">
                 <img src="{{getImage(imagePath()['logoIcon']['path'] .'/logo.png')}}" alt="P&M ElectronicsStore"
                     class="img-fluid w-100">
             </a>
@@ -54,15 +61,15 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav m-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="https://sftechbuyer.com/">Home</a>
+                        <a class="nav-link" href="http://pmelectronics.net/">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Sell
+                        <a class="nav-link active" href="https://sftechbuyer.com/">Sell
                             <i class="far fa-chevron-down" aria-hidden="true"></i>
 
                         </a>
                         <ul class="wsus__droap_menu">
-                            <li><a href="https://sftechbuyer.com/smartphone">Smartphone</a></li>
+                            <li><a href="https://sftechbuyer.com/smart-phone">Smartphone</a></li>
                             <li><a href="https://sftechbuyer.com/tablet">Tablet</a></li>
                             <li><a href="https://sftechbuyer.com/smartwatch">SmartWatch</a>
                             </li>
@@ -78,7 +85,7 @@
                         <a class="nav-link" href="https://sftechbuyer.com#why-us">Why us?</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="https://sftechbuyer.com#how-it-works">How it works?</a>
+                        <a class="nav-link" href="https://sftechbuyer.com/smart-phone">How it works?</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="https://sftechbuyer.com/faqs">F.A.Q.</a>
@@ -138,7 +145,7 @@
         SUBSCRIBE START
     ==============================-->
 
-    <footer class="pt_120 xs_pt_80" style="background: url({{ asset('assets/frontend/images/footer_bg.jpg') }});">
+    <footer class="pt_120 xs_pt_80" style=" background: url({{ asset('assets/frontend/images/3rd-banner-backgrund.jpg') }}) no-repeat center center / cover;">
         <div class="container">
             <div class="row justify-content-between">
                 <div class="col-xl-4 col-md-4 col-lg-4">
@@ -147,47 +154,49 @@
                             <img src="{{getImage(imagePath()['logoIcon']['path'] .'/logo.png')}}"
                                 alt="P&M ElectronicsStore" class="img-fluid w-100">
                         </a>
-                        <p class="description">We specialize in buying and selling various types of phones. Our
+                        <p class="description text-dark">We specialize in buying and selling various types of phones. Our
                             commitment is to provide the best experience for our customers. We cater to both corporate
                             clients and individual sellers.</p>
                     </div>
                 </div>
                 <div class="col-xl-2 col-md-4 col-lg-2">
                     <div class="wsus__footer_content">
-                        <h4>Support</h4>
+                        <h4  class="text-dark">Support</h4>
                         <ul>
-                            <li><a href="#">559-349-6073</a></li>
-                            <li><a href="#">https://sftechbuyer.com</a></li>
+                            <li><a href="tel:(415) 568-8444" class="text-dark">(415) 568-8444</a></li>
+                            <li><a href="tel:(925) 877-0777" class="text-dark">(925) 877-0777</a></li>
+                            <li><a href="tel:(206) 792-6923" class="text-dark">(206) 792-6923</a></li>
+                            <li class="mt-2"><span class="text-dark">4141 Manzanita Ave #125 Carmichael, CA 95608</span></a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-xl-2 col-md-4 col-lg-2">
                     <div class="wsus__footer_content">
-                        <h4>Quick Link</h4>
+                        <h4  class="text-dark">Quick Link</h4>
                         <ul>
-                            <li><a href="https://pmelectronics.net/about-us/" target="_blank">About Us</a></li>
-                            <li><a href="https://sftechbuyer.com/faqs">FAQ</a></li>
-                            <li><a href="https://pmelectronics.net/contact-us/" target="_blank">Contact
+                            <li><a class="text-dark" href="https://pmelectronics.net/about-us/" target="_blank">About Us</a></li>
+                            <li><a class="text-dark" href="https://sftechbuyer.com/faqs">FAQ</a></li>
+                            <li><a class="text-dark" href="https://pmelectronics.net/contact-us/" target="_blank">Contact
                                     us</a></li>
-                            <li><a href="https://pmelectronics.net/blog" target="_blank">News</a></li>
+                            <li><a class="text-dark" href="https://pmelectronics.net/services/" target="_blank">Services</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-xl-2 col-md-4 col-lg-3">
                     <div class="wsus__footer_content">
-                        <h4>Important Link</h4>
+                        <h4 class="text-dark">Important Link</h4>
                         <ul>
                             <li>
-                                <a class="" href="https://sftechbuyer.com/smartphone">Smartphone</a>
+                                <a class="text-dark" href="https://sftechbuyer.com/smart-phone">Smartphone</a>
                             </li>
                             <li>
-                                <a class="" href="https://sftechbuyer.com/tablet">Tablet</a>
+                                <a class="text-dark"  href="https://sftechbuyer.com/tablet">Tablet</a>
                             </li>
                             <li>
-                                <a class="" href="https://sftechbuyer.com/">Smartwatch</a>
+                                <a class="text-dark" href="https://sftechbuyer.com/">Smartwatch</a>
                             </li>
                             <li>
-                                <a class="" href="https://sftechbuyer.com/">Game Consoles</a>
+                                <a class="text-dark" href="https://sftechbuyer.com/">Game Consoles</a>
                             </li>
                         </ul>
                     </div>
@@ -200,7 +209,7 @@
                 <div class="row align-items-center">
                     <div class="col-xl-6 col-lg-6">
                         <div class="wsus__footer_copyright d-flex flex-wrap">
-                            <p>©2025 P&M Electronics All rights reserved</p>
+                            <p class="text-white">©2025 P&M Electronics All rights reserved</p>
                         </div>
                     </div>
                 </div>

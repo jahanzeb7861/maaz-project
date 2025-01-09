@@ -12,6 +12,8 @@
 
         <div class="sidebar__menu-wrapper" id="sidebar__menuWrapper">
             <ul class="sidebar__menu">
+
+
                 <li class="sidebar-menu-item {{menuActive('admin.dashboard')}}">
                     <a href="{{route('admin.dashboard')}}" class="nav-link ">
                         <i class="menu-icon las la-home"></i>
@@ -48,16 +50,17 @@
                     </a>
                 </li> -->
 
+                @if($user->role != 'Manager')
                 <li class="sidebar-menu-item sidebar-dropdown">
                     <a href="javascript:void(0)" class="{{menuActive('admin.users*',3)}}">
                         <i class="menu-icon las la-users"></i>
                         <span class="menu-title">@lang('Manage Users')</span>
 
-                        @if($banned_users_count > 0 || $email_unverified_users_count > 0 || $sms_unverified_users_count > 0)
+                        <!-- @if($banned_users_count > 0 || $email_unverified_users_count > 0 || $sms_unverified_users_count > 0)
                             <span class="menu-badge pill bg--primary ml-auto">
                                 <i class="fa fa-exclamation"></i>
                             </span>
-                        @endif
+                        @endif -->
                     </a>
                     <div class="sidebar-submenu {{menuActive('admin.users*',2)}} ">
                         <ul>
@@ -125,6 +128,7 @@
                         </ul>
                     </div>
                 </li>
+                @endif
 
                 <!-- <li class="sidebar-menu-item sidebar-dropdown">
                     <a href="javascript:void(0)" class="{{menuActive('admin.deposit*',3)}}">
@@ -252,14 +256,54 @@
                 </li> -->
 
                 <li class="sidebar-menu-item sidebar-dropdown">
-                    <a href="javascript:void(0)" class="{{menuActive('admin.ticket*',3)}}">
+                    <a href="javascript:void(0)" class="{{menuActive('admin.ticket*',4)}}">
                         <i class="menu-icon la la-ticket"></i>
-                        <span class="menu-title">@lang('Support Ticket') </span>
-                        @if(0 < $pending_ticket_count)
+                        <span class="menu-title">Orders </span>
+                        <!-- @if(0 < $pending_ticket_count)
                             <span class="menu-badge pill bg--primary ml-auto">
                                 <i class="fa fa-exclamation"></i>
                             </span>
-                        @endif
+                        @endif -->
+                    </a>
+                    <div class="sidebar-submenu {{menuActive('admin.order*',2)}} ">
+                        <ul>
+
+                            <li class="sidebar-menu-item {{menuActive('admin.order')}} ">
+                                <a href="{{route('admin.order')}}" class="nav-link">
+                                    <i class="menu-icon las la-dot-circle"></i>
+                                    <span class="menu-title">@lang('All Orders')</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item {{menuActive('admin.order.pending')}} ">
+                                <a href="{{route('admin.order.pending')}}" class="nav-link">
+                                    <i class="menu-icon las la-dot-circle"></i>
+                                    <span class="menu-title">@lang('Pending Orders')</span>
+                                    @if($pending_ticket_count)
+                                        <span
+                                            class="menu-badge pill bg--primary ml-auto">{{$pending_ticket_count}}</span>
+                                    @endif
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item {{menuActive('admin.order.completed')}} ">
+                                <a href="{{route('admin.order.completed')}}" class="nav-link">
+                                    <i class="menu-icon las la-dot-circle"></i>
+                                    <span class="menu-title">@lang('Completed Orders')</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                @if($user->role != 'Manager')
+                <li class="sidebar-menu-item sidebar-dropdown">
+                    <a href="javascript:void(0)" class="{{menuActive('admin.ticket*',3)}}">
+                        <i class="menu-icon la la-ticket"></i>
+                        <span class="menu-title">@lang('Support Ticket') </span>
+                        <!-- @if(0 < $pending_ticket_count)
+                            <span class="menu-badge pill bg--primary ml-auto">
+                                <i class="fa fa-exclamation"></i>
+                            </span>
+                        @endif -->
                     </a>
                     <div class="sidebar-submenu {{menuActive('admin.ticket*',2)}} ">
                         <ul>
@@ -295,6 +339,9 @@
                         </ul>
                     </div>
                 </li>
+                @endif
+
+
 
 
                 <!-- <li class="sidebar-menu-item sidebar-dropdown">
@@ -331,7 +378,7 @@
                         <span class="menu-title">@lang('Language') </span>
                     </a>
                 </li> -->
-
+                @if($user->role != 'Manager')
                 <li class="sidebar__menu-header">@lang('Settings')</li>
 
                 <li class="sidebar-menu-item {{menuActive('admin.setting.index')}}">
@@ -347,6 +394,7 @@
                         <span class="menu-title">@lang('Logo Icon Setting')</span>
                     </a>
                 </li>
+                @endif
 
                 <!-- <li class="sidebar-menu-item {{menuActive('admin.plugin.index')}}">
                     <a href="{{route('admin.plugin.index')}}" class="nav-link">

@@ -83,6 +83,9 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
         Route::get('password', 'AdminController@password')->name('password');
         Route::post('password', 'AdminController@passwordUpdate')->name('password.update');
 
+        Route::post('/admin/users/store', 'AdminController@store')->name('users.store');
+
+
         // Users Manager
         Route::get('users', 'ManageUsersController@allUsers')->name('users.all');
         Route::get('users/active', 'ManageUsersController@activeUsers')->name('users.active');
@@ -186,6 +189,13 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
         Route::put('ticket/reply/{id}', 'SupportTicketController@ticketReplySend')->name('ticket.reply');
         Route::get('ticket/download/{ticket}', 'SupportTicketController@ticketDownload')->name('ticket.download');
         Route::post('ticket/delete', 'SupportTicketController@ticketDelete')->name('ticket.delete');
+
+
+            // Admin Support
+        Route::get('orders', 'OrdersController@orders')->name('order');
+        Route::get('orders/pending', 'OrdersController@pendingOrder')->name('order.pending');
+        Route::get('orders/completed', 'OrdersController@completedOrders')->name('order.completed');
+        Route::get('order/change/status', 'OrdersController@changeStatus')->name('order.status');
 
 
         // Language Manager
@@ -403,5 +413,10 @@ Route::get('blog-details/{id}', 'SiteController@blogDetail')->name('blogDetail')
 
 
 Route::get('/', 'SiteController@index')->name('home');
-Route::get('/{slug}', 'SiteController@pages')->name('home.pages');
+Route::get('/{slug}', 'SiteController@categoryPage')->name('category.show');
+Route::get('/{categoryslug}/{brandslug}', 'SiteController@brandPage')->name('brand.show');
 Route::get('company-policy/{id}/{slug}', 'SiteController@policy')->name('links');
+
+
+Route::post('/order', 'SiteController@placeOrder')->name('order.send');
+

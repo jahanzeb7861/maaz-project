@@ -16,14 +16,14 @@
     }
 
     if( !$color1 || !checkhexcolor1( $color1 ) ) {
-      $color1 = "#1A84C4";
+      $color1 = "#3C97D3";
     }
 
     if( !$color2 || !checkhexcolor2( $color2 ) ) {
-      $color2 = "#1A84C4";
+      $color2 = "#3C97D3";
     }
-    $color1 = "#1A84C4";
-    $color2 = "#1A84C4";
+    $color1 = "#3C97D3";
+    $color2 = "#3C97D3";
 
 ?>
 

@@ -60,7 +60,7 @@
 
 
 	<!-- <section id="showCategory" class="pb-5" style="background-color:#61818a;"> -->
-	<section id="showCategory" class="pb-5" style="background-color:#1A84C4;">
+	<section id="showCategory" class="pb-5" style="background-color:#3C97D3;">
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-12">

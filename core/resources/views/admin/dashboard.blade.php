@@ -34,7 +34,7 @@
     @endif
 
     <div class="row mb-none-30 justify-content-center">
-        <div class="col-xl-3 col-lg-4 col-sm-6 mb-30">
+        <div class="col-xl-4 col-lg-4 col-sm-6 mb-30">
             <div class="dashboard-w1 bg--gradi-1 b-radius--10 box-shadow">
                 <div class="icon">
                     <i class="fa fa-users"></i>
@@ -50,7 +50,7 @@
                 </div>
             </div>
         </div><!-- dashboard-w1 end -->
-        <div class="col-xl-3 col-lg-4 col-sm-6 mb-30">
+        <div class="col-xl-4 col-lg-4 col-sm-6 mb-30">
             <div class="dashboard-w1 bg--gradi-6 b-radius--10 box-shadow">
                 <div class="icon">
                     <i class="fa fa-users"></i>
@@ -66,7 +66,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-xl-3 col-lg-4 col-sm-6 mb-30">
+        <div class="col-xl-4 col-lg-4 col-sm-6 mb-30">
             <div class="dashboard-w1 bg--gradi-42 b-radius--10 box-shadow ">
                 <div class="icon">
                     <i class="la la-envelope"></i>
@@ -80,6 +80,40 @@
                     </div>
 
                     <a href="{{route('admin.users.emailVerified')}}" class="btn btn-sm text--small bg--white text--black box--shadow3 mt-3">@lang('View All')</a>
+                </div>
+            </div>
+        </div><!-- dashboard-w1 end -->
+        <div class="col-xl-4 col-lg-4 col-sm-6 mb-30">
+            <div class="dashboard-w1 bg--gradi-42 b-radius--10 box-shadow ">
+                <div class="icon">
+                    <i class="la la-envelope"></i>
+                </div>
+                <div class="details">
+                    <div class="numbers">
+                        <span class="amount">{{$widget['pending_orders']}}</span>
+                    </div>
+                    <div class="desciption">
+                        <span class="text--small">New Queries</span>
+                    </div>
+
+                    <a href="{{route('admin.order.pending')}}" class="btn btn-sm text--small bg--white text--black box--shadow3 mt-3">@lang('View All')</a>
+                </div>
+            </div>
+        </div><!-- dashboard-w1 end -->
+        <div class="col-xl-4 col-lg-4 col-sm-6 mb-30">
+            <div class="dashboard-w1 bg--gradi-42 b-radius--10 box-shadow ">
+                <div class="icon">
+                    <i class="la la-envelope"></i>
+                </div>
+                <div class="details">
+                    <div class="numbers">
+                        <span class="amount">{{$widget['completed_orders']}}</span>
+                    </div>
+                    <div class="desciption">
+                        <span class="text--small">Completed Queries</span>
+                    </div>
+
+                    <a href="{{route('admin.order.completed')}}" class="btn btn-sm text--small bg--white text--black box--shadow3 mt-3">@lang('View All')</a>
                 </div>
             </div>
         </div><!-- dashboard-w1 end -->

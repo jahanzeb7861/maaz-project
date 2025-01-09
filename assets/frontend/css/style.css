@@ -1860,7 +1860,7 @@ footer {
     cursor: pointer;
     text-align: center;
     line-height: 1;
-    background: #02388d;
+    background: #29337C;
     transition: all linear 0.3s;
     -webkit-transition: all linear 0.3s;
     -moz-transition: all linear 0.3s;
@@ -1881,7 +1881,7 @@ footer {
 
 .wsus__scroll_btn span {
     font-size: 16px;
-    color: #02388d;
+    color: #29337C;
     position: absolute;
     top: 5px;
     left: 5px;
@@ -6110,12 +6110,12 @@ HOME PAGE END
     justify-content: center;
 }
 
-.wsus__download_img_3 {
+/* .wsus__download_img_3 {
     width: 480px;
     height: 440px;
     animation: download_rotate linear 4s infinite alternate;
     -webkit-animation: download_rotate linear 4s infinite alternate;
-}
+} */
 
 .home_3 .wsus__blog {
     background: #eff3f8;

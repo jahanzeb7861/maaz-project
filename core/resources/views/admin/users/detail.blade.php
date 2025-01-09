@@ -42,25 +42,25 @@
                             @endswitch
                         </li>
 
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <!-- <li class="list-group-item d-flex justify-content-between align-items-center">
                             @lang('Balance')
                             <span class="font-weight-bold">{{getAmount($user->balance)}}  {{$general->cur_text}}</span>
-                        </li>
-                        @if( $reff != null )
+                        </li> -->
+                        <!-- @if( $reff != null )
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                             @lang('Referred By')
                             <span class="font-weight-bold">{{ $reff->username }}</span>
                         </li>
-                        @endif
+                        @endif -->
 
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <!-- <li class="list-group-item d-flex justify-content-between align-items-center">
                             Rank
                             <span class="font-weight-bold">
                                <a> {{ __($user->rank ? $user->rank: 'PAID') }}</a>
                             </span>
-                        </li>
+                        </li> -->
 
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <!-- <li class="list-group-item d-flex justify-content-between align-items-center">
                             @lang('Total Referral')
                             <span class="font-weight-bold">
                                <a href="{{ route('admin.users.totalReferral',$user->id) }}"> {{ $totalReferral }} User</a>
@@ -71,18 +71,18 @@
                             <span class="font-weight-bold">
                                <a href="{{ route('admin.users.commissions',$user->id) }}"> {{ getAmount($user->commissions->sum('amount')) }} {{ $general->cur_text }}</a>
                             </span>
-                        </li>
-                        @if($user->plan)
+                        </li> -->
+                        <!-- @if($user->plan)
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                             @lang('User Plan')
                             <span class="font-weight-bold">{{ $user->plan->name }}
                             </span>
                         </li>
-                        @endif
+                        @endif -->
                     </ul>
                 </div>
             </div>
-            <div class="card b-radius--10 overflow-hidden mt-30 box--shadow1">
+            <!-- <div class="card b-radius--10 overflow-hidden mt-30 box--shadow1">
                 <div class="card-body">
                     <h5 class="mb-20 text-muted">@lang('User action')</h5>
                     <a data-toggle="modal" href="#addSubRWalletModal" class="btn btn--primary btn--shadow btn-block btn-lg">
@@ -105,13 +105,13 @@
                         @lang('Send Email')
                     </a>
                 </div>
-            </div>
+            </div> -->
         </div>
 
         <div class="col-xl-9 col-lg-7 col-md-7 mb-30">
 
-            <div class="row mb-none-30">
-                <div class="col-xl-3 col-lg-6 col-sm-6 mb-30">
+           <!-- <div class="row mb-none-30">
+                 <div class="col-xl-3 col-lg-6 col-sm-6 mb-30">
                     <div class="dashboard-w1 bg--gradi-1 b-radius--10 box-shadow has--link">
                         <a href="{{route('admin.users.deposits',$user->id)}}" class="item--link"></a>
                         <div class="icon">
@@ -127,7 +127,7 @@
                             </div>
                         </div>
                     </div>
-                </div><!-- dashboard-w1 end -->
+                </div>
 
 
                 <div class="col-xl-3 col-lg-6 col-sm-6 mb-30">
@@ -146,7 +146,7 @@
                             </div>
                         </div>
                     </div>
-                </div><!-- dashboard-w1 end -->
+                </div>
 
                 <div class="col-xl-3 col-lg-6 col-sm-6 mb-30">
                     <div class="dashboard-w1 bg--gradi-21 b-radius--10 box-shadow has--link">
@@ -163,7 +163,7 @@
                             </div>
                         </div>
                     </div>
-                </div><!-- dashboard-w1 end -->
+                </div>
 
                 <div class="col-xl-3 col-lg-6 col-sm-6 mb-30">
                     <div class="dashboard-w1 bg--gradi-11 b-radius--10 box-shadow has--link">
@@ -180,13 +180,13 @@
                             </div>
                         </div>
                     </div>
-                </div><!-- dashboard-w1 end -->
+                </div>
 
 
-            </div>
+            </div> -->
 
 
-            <div class="card mt-50">
+            <div class="card">
                 <div class="card-body">
                     <h5 class="card-title mb-50 border-bottom pb-2">{{$user->fullname}} @lang('Information')</h5>
 
@@ -231,49 +231,6 @@
                             </div>
                         </div>
 
-                        <div class="row mt-4">
-                            <div class="col-md-12">
-                                <div class="form-group ">
-                                    <label class="form-control-label font-weight-bold">@lang('Address') </label>
-                                    <input class="form-control" type="text" name="address"
-                                           value="{{$user->address->address}}">
-                                    <small class="form-text text-muted"><i class="las la-info-circle"></i> @lang('House number,
-                                        street address')
-                                    </small>
-                                </div>
-                            </div>
-
-                            <div class="col-xl-3 col-md-6">
-                                <div class="form-group">
-                                    <label class="form-control-label font-weight-bold">@lang('City') </label>
-                                    <input class="form-control" type="text" name="city"
-                                           value="{{$user->address->city}}">
-                                </div>
-                            </div>
-
-                            <div class="col-xl-3 col-md-6">
-                                <div class="form-group ">
-                                    <label class="form-control-label font-weight-bold">@lang('State') </label>
-                                    <input class="form-control" type="text" name="state"
-                                           value="{{$user->address->state}}">
-                                </div>
-                            </div>
-
-                            <div class="col-xl-3 col-md-6">
-                                <div class="form-group ">
-                                    <label class="form-control-label font-weight-bold">@lang('Zip/Postal') </label>
-                                    <input class="form-control" type="text" name="zip"
-                                           value="{{$user->address->zip}}">
-                                </div>
-                            </div>
-
-                            <div class="col-xl-3 col-md-6">
-                                <div class="form-group ">
-                                    <label class="form-control-label font-weight-bold">@lang('Country') </label>
-                                    <select name="country" class="form-control"> @include('partials.country') </select>
-                                </div>
-                            </div>
-                        </div>
 
 
                         <div class="row">
@@ -293,7 +250,7 @@
 
                             </div>
 
-                            <div class="form-group  col-xl-4 col-md-6  col-sm-3 col-12">
+                            <!-- <div class="form-group  col-xl-4 col-md-6  col-sm-3 col-12">
                                 <label class="form-control-label font-weight-bold">@lang('SMS Verification') </label>
                                 <input type="checkbox" data-width="100%" data-onstyle="-success" data-offstyle="-danger"
                                        data-toggle="toggle" data-on="Verified" data-off="Unverified" name="sv"
@@ -312,7 +269,7 @@
                                 <input type="checkbox" data-width="100%" data-onstyle="-success" data-offstyle="-danger"
                                        data-toggle="toggle" data-on="Verified" data-off="Unverified" name="tv"
                                        @if($user->tv) checked @endif>
-                            </div>
+                            </div> -->
                         </div>
 
 
@@ -461,11 +418,3 @@
     </div>
 @endsection
 
-@push('script')
-    <script>
-        (function($){
-            "use strict";
-            $("select[name=country]").val("{{ @$user->address->country }}");
-        })(jQuery);
-    </script>
-@endpush

@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Admin;
 use App\Deposit;
 use App\Gateway;
 use App\GeneralSetting;
 use App\Http\Controllers\Controller;
+use App\Order;
 use App\Point;
 use App\Referral;
 use App\User;
@@ -30,6 +32,8 @@ class AdminController extends Controller
         $widget['verified_users'] = User::where('status', 1)->count();
         $widget['sms_unverified_users'] = User::where('sv', 0)->count();
         $widget['email_unverified_users'] = User::where('ev', 0)->count();
+        $widget['pending_orders'] = Order::where('status', 'Pending')->count();
+        $widget['completed_orders'] = Order::where('status', 'Completed')->count();
 
 
         // Monthly Deposit & Withdraw Report Graph
@@ -100,7 +104,45 @@ class AdminController extends Controller
 
         $latestUser = User::latest()->limit(6)->get();
 
-        return view('admin.dashboard', compact('page_title', 'widget', 'report', 'withdrawals', 'chart','payment','paymentWithdraw','latestUser'));
+        $user = Auth::user();
+
+        // $user = Admin::where('username',$userData->username)->first();
+
+        return view('admin.dashboard', compact('page_title', 'widget', 'report', 'withdrawals', 'chart','payment','paymentWithdraw','latestUser','user'));
+    }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'firstname' => 'required|string|max:255',
+            'lastname' => 'required|string|max:255',
+            'username' => 'required|string|max:255|unique:users,username',
+            'email' => 'required|email|max:255|unique:users,email',
+            'mobile' => 'required|string|max:15',
+            'password' => 'required|string|min:6',
+        ]);
+
+        User::create([
+            'firstname' => $request->firstname,
+            'lastname' => $request->lastname,
+            'username' => $request->username,
+            'email' => $request->email,
+            'mobile' => $request->mobile,
+            'role' => $request->role,
+            'password' => bcrypt($request->password),
+        ]);
+
+
+        Admin::create([
+            'name' => $request->firstname.' '.$request->lastname,
+            'username' => $request->username,
+            'email' => $request->email,
+            'mobile' => $request->mobile,
+            'role' => $request->role,
+            'password' => bcrypt($request->password),
+        ]);
+
+        return redirect()->back()->with('success', 'User created successfully.');
     }
 
 
