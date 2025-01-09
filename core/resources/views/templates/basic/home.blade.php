@@ -66,7 +66,7 @@ $banners = getContent('banner.element');
             <div class="col-xxl-5 col-md-5">
                 <div class="wsus__download_img_3">
                     <img src="{{ asset('assets/frontend/images/mobile-mockups.png') }}" alt="download"
-                     style="width: 120% !important;border-radius: 10px;">
+                     style="width: 100% !important;border-radius: 10px;">
                 </div>
             </div>
         </div>
@@ -173,7 +173,7 @@ style="background: url({{ asset('assets/frontend/images/3rd-banner-backgrund.jpg
                     <p class="text-white">Tell us your device model and condition for an instant cash offer.</p>
                 </div>
             </div>
-            <div class="col-xl-3 col-md-4">
+            <div class="col-xl-3 col-md-4 my-5 my-md-0">
                 <div class="wsus__why_choose_item center p-0">
                     <div class="img" style="border-radius: 0px !important; overflow:inherit; width:100%; height: 100%;">
                         <img src="{{ asset('assets/frontend/images/mob.png') }}" alt="why choose"

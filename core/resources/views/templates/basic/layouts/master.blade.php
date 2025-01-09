@@ -204,6 +204,60 @@
             </div>
         </div>
 
+        <div class="container">
+    <!-- <div class="row flex-column flex-md-row justify-content-between">
+        <div class="d-flex flex-column flex-md-row w-100">
+            <div class="col-12 col-md-4">
+                <div class="wsus__footer_content">
+                    <a class="footer_logo" href="#">
+                        <img src="{{getImage(imagePath()['logoIcon']['path'] .'/logo.png')}}"
+                             alt="P&M ElectronicsStore" class="img-fluid w-100">
+                    </a>
+                    <p class="description text-dark">We specialize in buying and selling various types of phones. Our
+                        commitment is to provide the best experience for our customers. We cater to both corporate
+                        clients and individual sellers.</p>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="wsus__footer_content">
+                    <h4 class="text-dark">Support</h4>
+                    <ul>
+                        <li><a href="tel:(415) 568-8444" class="text-dark">(415) 568-8444</a></li>
+                        <li><a href="tel:(925) 877-0777" class="text-dark">(925) 877-0777</a></li>
+                        <li><a href="tel:(206) 792-6923" class="text-dark">(206) 792-6923</a></li>
+                        <li class="mt-2"><span class="text-dark">4141 Manzanita Ave #125 Carmichael, CA 95608</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="d-flex flex-column flex-md-row w-100">
+            <div class="col-12 col-md-4">
+                <div class="wsus__footer_content">
+                    <h4 class="text-dark">Quick Link</h4>
+                    <ul>
+                        <li><a class="text-dark" href="https://pmelectronics.net/about-us/" target="_blank">About Us</a></li>
+                        <li><a class="text-dark" href="https://sftechbuyer.com/faqs">FAQ</a></li>
+                        <li><a class="text-dark" href="https://pmelectronics.net/contact-us/" target="_blank">Contact us</a></li>
+                        <li><a class="text-dark" href="https://pmelectronics.net/services/" target="_blank">Services</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="wsus__footer_content">
+                    <h4 class="text-dark">Important Link</h4>
+                    <ul>
+                        <li><a class="text-dark" href="https://sftechbuyer.com/smart-phone">Smartphone</a></li>
+                        <li><a class="text-dark" href="https://sftechbuyer.com/tablet">Tablet</a></li>
+                        <li><a class="text-dark" href="https://sftechbuyer.com/">Smartwatch</a></li>
+                        <li><a class="text-dark" href="https://sftechbuyer.com/">Game Consoles</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div> -->
+</div>
+
         <div class="wsus__footer_bottom my-4">
             <div class="container max-width">
                 <div class="row align-items-center">

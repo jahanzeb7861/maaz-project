@@ -8342,3 +8342,8 @@ AUTHOR EDIT PROFILE END
     margin: 20px 5px;
     border-radius: 5px;
 }
+
+
+.wsus__download_img_3 img {
+    width: 100% !important;
+}
