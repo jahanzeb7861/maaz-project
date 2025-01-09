@@ -85,14 +85,14 @@
                         <a class="nav-link" href="https://sftechbuyer.com#why-us">Why us?</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="https://sftechbuyer.com/smart-phone">How it works?</a>
+                        <a class="nav-link" href="https://sftechbuyer.com#how-it-works">How it works?</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="https://sftechbuyer.com/faqs">F.A.Q.</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link" href="#" data-toggle="modal" data-target="#trackOrderForm">Track Order</a>
-                    </li>
+                    </li> -->
 
 
 
@@ -102,7 +102,7 @@
 
 
                 <ul class="right_menu d-flex flex-wrap">
-                    <ul class="navbar-nav m-auto">
+                    <!-- <ul class="navbar-nav m-auto">
                         <li class="nav-item">
                             <a class="nav-link" href="#">
                                 <i class="fas fa-user" style="font-size: 18px;"></i>
@@ -118,17 +118,17 @@
                                 @endguest
                             </ul>
                         </li>
-                    </ul>
-                    <li>
+                    </ul> -->
+                    <!-- <li>
                         <a href="#">
                             <img src="{{ asset('assets/frontend/images/menu_cart_icom.png') }}" alt="user"
                                 class="img-fluid w-100">
                             <span id="cartQty">0</span>
                         </a>
-                    </li>
-                    <li><a class="start_btn" href="https://sftechbuyer.com/sell">Sell
+                    </li> -->
+                    <li><a class="start_btn" href="https://sftechbuyer.com/">Sell
                             Device</a></li>
-                    <li><a class="support_btn" href="#">Buy Device</a>
+                    <li><a class="support_btn" href="http://pmelectronics.net/">Buy Device</a>
                     </li>
                 </ul>
             </div>

@@ -165,31 +165,31 @@ style="background: url({{ asset('assets/frontend/images/3rd-banner-backgrund.jpg
         <div class="row justify-content-between">
             <div class="col-xl-3 col-md-4">
                 <div class="wsus__why_choose_item p-0">
-                    <div class="img" style="border-radius: 0px !important; width:100%; height: 100%;">
+                    <div class="img" style="border-radius: 0px !important; overflow:inherit; width:100%; height: 100%;">
                         <img src="{{ asset('assets/frontend/images/leptop.png') }}" alt="why choose"
                             class="img-fluid w-100">
                     </div>
-                    <h4 class="text-white">Step 1: Get a Free Quote</h4>
+                    <h4 class="text-white my-1">Step 1: Get a Free Quote</h4>
                     <p class="text-white">Tell us your device model and condition for an instant cash offer.</p>
                 </div>
             </div>
             <div class="col-xl-3 col-md-4">
                 <div class="wsus__why_choose_item center p-0">
-                    <div class="img" style="border-radius: 0px !important; width:100%; height: 100%;">
+                    <div class="img" style="border-radius: 0px !important; overflow:inherit; width:100%; height: 100%;">
                         <img src="{{ asset('assets/frontend/images/mob.png') }}" alt="why choose"
                             class="img-fluid w-100">
                     </div>
-                    <h4 class="text-white">Step 2: Drop Off or Ship</h4>
+                    <h4 class="text-white my-1">Step 2: Drop Off or Ship</h4>
                     <p class="text-white">Bring your device to our store or choose a secure shipping option.</p>
                 </div>
             </div>
             <div class="col-xl-3 col-md-4">
                 <div class="wsus__why_choose_item last p-0">
-                    <div class="img" style="border-radius: 0px !important; width:100%; height: 100%;">
+                    <div class="img" style="border-radius: 0px !important; overflow:inherit; width:100%; height: 100%;">
                         <img src="{{ asset('assets/frontend/images/cash.png') }}" alt="why choose"
                             class="img-fluid w-100">
                     </div>
-                    <h4 class="text-white">Step 3: Get Paid Instantly</h4>
+                    <h4 class="text-white my-1">Step 3: Get Paid Instantly</h4>
                     <p class="text-white">Receive top cash on the spot—fast, easy, and hassle-free!</p>
                 </div>
             </div>
