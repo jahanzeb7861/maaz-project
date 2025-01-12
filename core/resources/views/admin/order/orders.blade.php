@@ -8,12 +8,10 @@
                         <table class="table table--light">
                             <thead>
                             <tr>
-                                <th scope="col">@lang('Name')</th>
+                                <th scope="col">@lang('Box Id')</th>
                                 <th scope="col">@lang('Email')</th>
-                                <th scope="col">@lang('Phone')</th>
+                                <th scope="col">@lang('Price')</th>
                                 <th scope="col">@lang('Location')</th>
-                                <th scope="col">@lang('Brand')</th>
-                                <th scope="col">@lang('Category')</th>
                                 <th scope="col">@lang('Status')</th>
                                 <th scope="col">@lang('Created Date')</th>
                                 <th scope="col">@lang('Action')</th>
@@ -22,45 +20,30 @@
                             <tbody>
                             @forelse($items as $item)
                                 <tr>
-                                    <td data-label="@lang('Name')">
-                                        <p class="font-weight-bold"> {{ $item->name }}</p>
+                                    <td data-label="@lang('Box Id')">
+                                        {{$item['box_id']}}
                                     </td>
                                     <td data-label="@lang('Email')">
-                                        {{$item->email}}
+                                        {{$item['customer_email']}}
                                     </td>
-                                    <td data-label="@lang('Phone')">
-                                        {{$item->phone}}
+                                    <td data-label="@lang('Price')">
+                                        {{$item['payout_total']}}
                                     </td>
                                     <td data-label="@lang('Location')">
-                                        {{$item->location}}
-                                    </td>
-                                    <td data-label="@lang('Brand')">
-                                        {{$item->brand_id}}
-                                    </td>
-                                    <td data-label="@lang('Product')">
-                                        {{$item->product_model_id}}
+                                        {{$item['location_name']}}
                                     </td>
                                     <td data-label="@lang('Status')">
-                                        @if($item->status == 'Completed')
-                                            <span class="text--small badge font-weight-normal badge--success">@lang('Completed')</span>
-                                        @elseif($item->status == 'Pending')
-                                            <span class="text--small badge font-weight-normal badge--warning">@lang('Pending')</span>
+                                        @if($item['status'] == 'Active Leads')
+                                            <span class="text--small badge font-weight-normal badge--success">@lang('Active Leads')</span>
+                                        @else
+                                            <span class="text--small badge font-weight-normal badge--warning">{{$item['status']}}</span>
                                         @endif
                                     </td>
-                                    <td data-label="@lang('Last Reply')">
-                                        {{ \Carbon\Carbon::parse($item->last_reply)->diffForHumans() }}
+                                    <td data-label="@lang('Created Date')">
+                                        {{ \Carbon\Carbon::parse($item['created_at'])->diffForHumans() }}
                                     </td>
                                     <td data-label="@lang('Action')">
-                                        @if($item->status != 'Completed')
-                                        <button
-                                            class="icon-btn change-status-btn"
-                                            data-id="{{ $item->id }}"
-                                            data-status="{{ $item->status }}"
-                                            data-toggle="tooltip"
-                                            title="@lang('Change Status')">
-                                            <i class="la la-pencil"></i>
-                                        </button>
-                                        @endif
+                                        <a href="{{$item['customer_portal_url']}}" target="_blank">View</a>
                                     </td>
                                 </tr>
                             @empty
@@ -73,7 +56,6 @@
                     </div>
                 </div>
                 <div class="card-footer py-4">
-                    {{ $items->links('admin.partials.paginate') }}
                 </div>
             </div><!-- card end -->
         </div>

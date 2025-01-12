@@ -13,7 +13,7 @@ class OrdersController extends Controller
     {
         $page_title = 'Orders';
         $empty_message = 'No Data found.';
-        $items = Order::latest()->paginate(getPaginate());
+        // $items = Order::latest()->paginate(getPaginate());
 
         // Fetch orders with related product data using Query Builder
         // $items = DB::table('orders')
@@ -23,6 +23,27 @@ class OrdersController extends Controller
         // ->paginate(getPaginate());
 
         // dd($items);
+
+
+        $client = new \GuzzleHttp\Client();
+
+        $responseModelDetails = $client->request('GET', 'https://api.reusely.com/api/v2/admin/orders?buyback_type=mail-in', [
+          'headers' => [
+                'accept' => 'application/json',
+                'x-api-key' => 'khFohASwrgJm8oYSdfOaTZG7aq41mrzZg3GC8gsQbqAT7JzwHqDvorgbB13LadmN',
+                'x-secret-key' => 'sm89Bwi8bf0UPaDV4dtKKJjVbHXLkJiCYCoDKuqcZDsfUoMbggZ3W7Q7niGmb7S0',
+                'x-tenant-id' => 'a395524ecd10937b12b14e7ff33ea54e6d4d0b21d67568f518163aac0056b26b',
+            ],
+        ]);
+
+
+        // Parse the response body
+        $response = json_decode($responseModelDetails->getBody()->getContents(), true);
+
+        $items = $response['result']['data'];
+
+        // dd($items);
+
 
         return view('admin.order.orders', compact('items', 'page_title','empty_message'));
     }

@@ -30,6 +30,40 @@ class SiteController extends Controller
         $data['categories'] = \DB::table('categories')->get();
 
         // dd($data);
+
+        //TODO:: Call api for Categories listing
+
+
+
+        $client = new \GuzzleHttp\Client();
+
+        $response = $client->request('GET', 'https://api.reusely.com/api/v2/public/catalog/category', [
+          'headers' => [
+            'accept' => 'application/json',
+            'x-api-key' => 'khFohASwrgJm8oYSdfOaTZG7aq41mrzZg3GC8gsQbqAT7JzwHqDvorgbB13LadmN',
+            'x-tenant-id' => 'a395524ecd10937b12b14e7ff33ea54e6d4d0b21d67568f518163aac0056b26b',
+          ],
+        ]);
+
+
+        // Parse the response body
+        $responseData = json_decode($response->getBody()->getContents(), true);
+        // dd($responseData['result']['data']);
+
+        // // Assuming the API returns an array of categories
+        // // You may need to adjust this based on the actual API response structure
+        $data['categories'] = collect($responseData['result']['data'])->map(function ($category) {
+            return (object) [
+                'slug' => $category['slug'] ?? str_slug($category['name'] ?? ''),
+                'brand_slug' => $category['brand_slug'] ?? str_slug($category['brand_slug'] ?? ''),
+                'category_slug' => $category['category_slug'] ?? str_slug($category['category_slug'] ?? ''),
+                'image' => $category['image'] ?? '',
+                'name' => $category['name'] ?? ''
+            ];
+        });
+
+        // dd($data['categories']);
+
         return view($activeTemplate . 'home', $data);
     }
 
@@ -120,33 +154,153 @@ class SiteController extends Controller
     {
         $activeTemplate = activeTemplate();
 
-        $category = DB::table('categories')->where('slug', $slug)->first();
-        if (!$category) {
-            abort(404);
-        }
+        // $category = DB::table('categories')->where('slug', $slug)->first();
+        // if (!$category) {
+        //     abort(404);
+        // }
 
-        $brands = DB::table('brands')->where('category_id', $category->id)->get();
+        // $brands = DB::table('brands')->where('category_id', $category->id)->get();
 
         // $data['page_title'] = 'FAQ';
         // $data['sections'] = Page::where('tempname',$activeTemplate)->where('slug','faq')->firstOrFail();
+
+
+
+        $client = new \GuzzleHttp\Client();
+
+        $response = $client->request('GET', 'https://api.reusely.com/api/v2/public/catalog/brand', [
+          'headers' => [
+            'accept' => 'application/json',
+            'x-api-key' => 'khFohASwrgJm8oYSdfOaTZG7aq41mrzZg3GC8gsQbqAT7JzwHqDvorgbB13LadmN',
+            'x-tenant-id' => 'a395524ecd10937b12b14e7ff33ea54e6d4d0b21d67568f518163aac0056b26b',
+          ],
+        ]);
+
+
+        // Parse the response body
+        $responseData = json_decode($response->getBody()->getContents(), true);
+
+
+        // // Assuming the API returns an array of categories
+        // // You may need to adjust this based on the actual API response structure
+        $brands = collect($responseData['result']['data'])->map(function ($brand) {
+            return (object) [
+                'slug' => $brand['slug'] ?? str_slug($brand['name'] ?? ''),
+                'image' => $brand['image'] ?? '',
+                'name' => $brand['name'] ?? ''
+            ];
+        });
+
+        // dd($data['categories']);
+
         return view('templates.basic.category', ['brands'=> $brands]);
     }
 
     public function brandPage($categorySlug,$brandSlug)
     {
-        $category = DB::table('categories')->where('slug', $categorySlug)->first();
-        if (!$category) {
-            abort(404);
-        }
+        // $category = DB::table('categories')->where('slug', $categorySlug)->first();
+        // if (!$category) {
+        //     abort(404);
+        // }
 
-        $brand = DB::table('brands')->where('category_id', $category->id)->where('slug', $brandSlug)->first();
-        if (!$brand) {
-            abort(404);
-        }
+        // $brand = DB::table('brands')->where('category_id', $category->id)->where('slug', $brandSlug)->first();
+        // if (!$brand) {
+        //     abort(404);
+        // }
 
-        $models = DB::table('product_models')->where('category_id', $category->id)->where('brand_id', $brand->id)->get();
+        // $models = DB::table('product_models')->where('category_id', $category->id)->where('brand_id', $brand->id)->get();
 
-        return view('templates.basic.models', ['models'=> $models]);
+
+        // TODO:: call list device
+
+        $client = new \GuzzleHttp\Client();
+
+        $responseDevices = $client->request('GET', 'https://api.reusely.com/api/v2/public/catalog/category-brand/'.$brandSlug, [
+                'headers' => [
+                'accept' => 'application/json',
+                'x-api-key' => 'khFohASwrgJm8oYSdfOaTZG7aq41mrzZg3GC8gsQbqAT7JzwHqDvorgbB13LadmN',
+                'x-tenant-id' => 'a395524ecd10937b12b14e7ff33ea54e6d4d0b21d67568f518163aac0056b26b',
+                ],
+        ]);
+
+
+         // Parse the response body
+         $responseDeviceData = json_decode($responseDevices->getBody()->getContents(), true);
+
+          // // Assuming the API returns an array of categories
+        // // You may need to adjust this based on the actual API response structure
+        $devices = collect($responseDeviceData['result']['data'])->map(function ($brand) {
+            return (object) [
+                'slug' => $brand['slug'] ?? str_slug($brand['name'] ?? ''),
+                'image' => $brand['image'] ?? '',
+                'name' => $brand['name'] ?? ''
+            ];
+        });
+
+        $client = new \GuzzleHttp\Client();
+
+        $responseModels = $client->request('GET', 'https://api.reusely.com/api/v2/public/catalog/model-device/'.$brandSlug.'/'.$devices[0]->slug, [
+          'headers' => [
+            'accept' => 'application/json',
+            'x-api-key' => 'khFohASwrgJm8oYSdfOaTZG7aq41mrzZg3GC8gsQbqAT7JzwHqDvorgbB13LadmN',
+            'x-tenant-id' => 'a395524ecd10937b12b14e7ff33ea54e6d4d0b21d67568f518163aac0056b26b',
+          ],
+        ]);
+
+
+        // Parse the response body
+        $responseModelsData = json_decode($responseModels->getBody()->getContents(), true);
+
+
+        // // Assuming the API returns an array of categories
+        // // You may need to adjust this based on the actual API response structure
+        $models = collect($responseModelsData['result']['data'])->map(function ($brand) {
+            return (object) [
+                'slug' => $brand['slug'] ?? str_slug($brand['name'] ?? ''),
+                'image' => $brand['image'] ?? '',
+                'upto' => $brand['upto'] ?? '',
+                'name' => $brand['name'] ?? ''
+            ];
+        });
+
+        // dd($models,$models[0]->slug,$brandSlug);
+
+
+        $client = new \GuzzleHttp\Client();
+
+        $responseModelDetails = $client->request('GET', 'https://api.reusely.com/api/v2/public/catalog/model-device/'.$brandSlug.'/'.$models[0]->slug, [
+          'headers' => [
+            'accept' => 'application/json',
+            'x-api-key' => 'khFohASwrgJm8oYSdfOaTZG7aq41mrzZg3GC8gsQbqAT7JzwHqDvorgbB13LadmN',
+            'x-tenant-id' => 'a395524ecd10937b12b14e7ff33ea54e6d4d0b21d67568f518163aac0056b26b',
+          ],
+        ]);
+
+
+        // Parse the response body
+        $responseModelsDetailsData = json_decode($responseModelDetails->getBody()->getContents(), true);
+
+        // dd($responseModelsDetailsData);
+
+        $modelDetails = $responseModelsDetailsData['result'];
+
+
+        // Assuming the API returns an array of categories
+        // You may need to adjust this based on the actual API response structure
+        // $modelDetails = collect($responseModelsDetailsData['result'])->map(function ($modelDetail) {
+        //     return (object) [
+        //         'slug' => $modelDetail['slug'] ?? str_slug($modelDetail['name'] ?? ''),
+        //         'product' => $modelDetail['image'] ?? '',
+        //         'upto' => $modelDetail['upto'] ?? '',
+        //         'name' => $modelDetail['name'] ?? ''
+        //     ];
+        // });
+
+
+
+        return view('templates.basic.models', ['models'=> $models,'modelDetails' => $modelDetails,
+                                            'brandSlug' => $brandSlug, 'model' => $models[0]->slug,
+                                            'deviceSlug' => $devices[0]->slug]);
     }
 
     // placeOrder

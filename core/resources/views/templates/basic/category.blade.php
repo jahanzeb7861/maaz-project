@@ -41,7 +41,7 @@ $banners = getContent('banner.element');
         <a href="{{ url('/' . request()->segment(1) . '/' . $brand->slug) }}" class="col-xl-4 col-sm-6 col-lg-3 text-center my-4 mx-2"
             style="background: #fff; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); padding: 20px; display: flex; border-radius: 10px; flex-direction: column; justify-content: center; text-decoration: none;">
             <div class="img">
-                <img src="{{ $brand->image }}" style="width: 20% !important; margin: 0 auto;" class="img-fluid">
+                <img src="{{ $brand->image }}" style="width: 43% !important; margin: 0 auto;" class="img-fluid">
             </div>
             <h4 class="my-3">{{ $brand->name }}</h4>
         </a>

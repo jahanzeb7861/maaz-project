@@ -50,7 +50,6 @@
                     </a>
                 </li> -->
 
-                @if($user->role != 'Manager')
                 <li class="sidebar-menu-item sidebar-dropdown">
                     <a href="javascript:void(0)" class="{{menuActive('admin.users*',3)}}">
                         <i class="menu-icon las la-users"></i>
@@ -128,7 +127,6 @@
                         </ul>
                     </div>
                 </li>
-                @endif
 
                 <!-- <li class="sidebar-menu-item sidebar-dropdown">
                     <a href="javascript:void(0)" class="{{menuActive('admin.deposit*',3)}}">
@@ -294,7 +292,6 @@
                     </div>
                 </li>
 
-                @if($user->role != 'Manager')
                 <li class="sidebar-menu-item sidebar-dropdown">
                     <a href="javascript:void(0)" class="{{menuActive('admin.ticket*',3)}}">
                         <i class="menu-icon la la-ticket"></i>
@@ -339,7 +336,6 @@
                         </ul>
                     </div>
                 </li>
-                @endif
 
 
 
@@ -378,7 +374,6 @@
                         <span class="menu-title">@lang('Language') </span>
                     </a>
                 </li> -->
-                @if($user->role != 'Manager')
                 <li class="sidebar__menu-header">@lang('Settings')</li>
 
                 <li class="sidebar-menu-item {{menuActive('admin.setting.index')}}">
@@ -394,7 +389,6 @@
                         <span class="menu-title">@lang('Logo Icon Setting')</span>
                     </a>
                 </li>
-                @endif
 
                 <!-- <li class="sidebar-menu-item {{menuActive('admin.plugin.index')}}">
                     <a href="{{route('admin.plugin.index')}}" class="nav-link">

@@ -143,7 +143,7 @@
                             <div id="flush-collapse7" class="accordion-collapse collapse "
                                 aria-labelledby="flush-heading7" data-bs-parent="#accordionFlushExample">
                                 <div class="accordion-body">
-                                    <p>We buy most electronics! Contact us, and we’ll be happy to check your device. (Contact Us Link With https://pmelectronics.net/contact)</p>
+                                    <p>We buy most electronics! <a href="https://pmelectronics.net/contact">Contact us</a>, and we’ll be happy to check your device.</p>
                                 </div>
                             </div>
                         </div>

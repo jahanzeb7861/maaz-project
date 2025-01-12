@@ -5,8 +5,7 @@ $banners = getContent('banner.element');
 
 @section('content')
 
-<section class="wsus__download_3 mt_100 xs_mt_80 pt_120 xs_pt_80 pb_120 xs_pb_80"
-    style="
+<section class="wsus__download_3 mt_100 xs_mt_80 pt_120 xs_pt_80 pb_120 xs_pb_80" style="
         background: url({{ asset('assets/frontend/images/background.jpg') }}) no-repeat center center / cover;
         color: #fff;
         text-align: left;
@@ -66,7 +65,7 @@ $banners = getContent('banner.element');
             <div class="col-xxl-5 col-md-5">
                 <div class="wsus__download_img_3">
                     <img src="{{ asset('assets/frontend/images/mobile-mockups.png') }}" alt="download"
-                     style="width: 100% !important;border-radius: 10px;">
+                        style="width: 100% !important;border-radius: 10px;">
                 </div>
             </div>
         </div>
@@ -75,17 +74,52 @@ $banners = getContent('banner.element');
 
 
 
-<div class="wsus__author_category mt_95 xs_mt_55 p-5" style="background: url({{ asset('assets/frontend/images/2nd-banner-backgrund.jpg') }}) no-repeat center center / cover; margin:0 !important;">
+<div class="wsus__author_category mt_95 xs_mt_55 p-5" style="
+background-color: #7ff5f5 !important;
+/* background: url({{ asset('assets/frontend/images/2nd-banner-backgrund.jpg') }}) no-repeat center center / cover;  */
+margin:0 !important;">
     <div class="container py-3">
         <div class="row">
             <div class="col-xl-7 col-lg-8 m-auto">
                 <div class="wsus__section_heading mb_25">
                     <!--<h3 class="text-white">Choose your device's category to calculate best offer:</h3>-->
                     <h3 class="text-dark">READY TO GET PAID?</h3>
-                      <p class="text-dark"> Let’s Get Started!</p>
+                    <p class="text-dark"> Let's Get Started!</p>
                 </div>
             </div>
         </div>
+
+
+
+        <!-- <script src="https://widget.reusely.com/v3.js"></script>
+        <div class="buyback-widget" style="background: bottom !important;"></div>
+        <script defer>
+            new Buyback({
+                tenantId: "a395524ecd10937b12b14e7ff33ea54e6d4d0b21d67568f518163aac0056b26b",
+                apiKey: "khFohASwrgJm8oYSdfOaTZG7aq41mrzZg3GC8gsQbqAT7JzwHqDvorgbB13LadmN",
+                disableFloatButton: false
+            })
+
+        </script> -->
+
+
+        <!-- <div class="section-card-list section-card-list--less">
+            @foreach($categories as $category)
+
+            <div class="card card--border card--active-primary section-card-container section-card-mask"
+                data-tooltip-target="smartphones">
+                <div class="section-card-img section-card-img--real"><img
+                        src="{{ $category->image }}" alt="Smartphones">
+                </div>
+                <div class="section-card-title">
+                    <p class="section-card-text">{{ $category->name }}</p>
+                </div>
+            </div>
+        @endforeach
+
+        </div> -->
+
+
         <div class="row justify-content-center">
         @foreach($categories as $category)
         <a href="{{ route('category.show', ['slug' => $category->slug]) }}" class="col-xl-2 col-sm-6 col-lg-3 text-center my-4 mx-2"
@@ -97,6 +131,8 @@ $banners = getContent('banner.element');
         </a>
         @endforeach
         </div>
+
+
     </div>
 </div>
 
@@ -151,8 +187,7 @@ $banners = getContent('banner.element');
 
 
 <section class="wsus__why_choose pt_115 xs_pt_75 pb_120 xs_pb_80" id="how-it-works"
-
-style="background: url({{ asset('assets/frontend/images/3rd-banner-backgrund.jpg') }}) no-repeat center center / cover;">
+    style="background: url({{ asset('assets/frontend/images/3rd-banner-backgrund.jpg') }}) no-repeat center center / cover;">
     <div class="container">
         <div class="row">
             <div class="col-xl-7 m-auto">
