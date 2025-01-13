@@ -297,9 +297,10 @@ $banners = getContent('banner.element');
 }
 
 .spec-choice-image {
-    max-height: 100%;
+    /* max-height: 100%; */
     /* width: auto; */
-    width: 43% !important;
+    /* width: 43% !important; */
+    object-fit: contain !important;
 }
 
 .spec-terms {
@@ -619,86 +620,123 @@ $banners = getContent('banner.element');
     }
 
     function updateConditionOptions(networkSlug, sizeSlug) {
-        // Show loading state in conditions section
-        const conditionsSection = document.querySelector('#conditions .spec-collapse-body');
-        conditionsSection.innerHTML = '<div class="text-center">Loading...</div>';
-        const deviceSlug = '{{$deviceSlug}}';
+    // Show loading state in conditions section
+    const conditionsSection = document.querySelector('#conditions .spec-collapse-body');
+    conditionsSection.innerHTML = '<div class="text-center">Loading...</div>';
+    const deviceSlug = '{{$deviceSlug}}';
 
-        // alert(sizeSlug);
-        // alert(networkSlug);
-        // alert(deviceSlug);
+    // Make the API request
+    $.ajax({
+        url: `https://api.reusely.com/api/v2/public/catalog/condition?brand=${brandId}&spec[device]=${deviceSlug}&spec[model]=${model_slug}&spec[network]=${networkSlug}&spec[size]=${sizeSlug}`,
+        type: 'GET',
+        headers: {
+            'accept': 'application/json',
+            'x-api-key': 'khFohASwrgJm8oYSdfOaTZG7aq41mrzZg3GC8gsQbqAT7JzwHqDvorgbB13LadmN',
+            'x-tenant-id': 'a395524ecd10937b12b14e7ff33ea54e6d4d0b21d67568f518163aac0056b26b'
+        },
+        data: {
+            network: networkSlug,
+            size: sizeSlug
+        },
+        success: function(response) {
+            if (response.status_code === 200 && response.result?.conditions) {
+                const conditions = response.result.conditions;
+                const productId = response.result.product.product_id;
+                let conditionsHtml = '';
 
-        // Make the API request
-        $.ajax({
-            url: `https://api.reusely.com/api/v2/public/catalog/condition?brand=${brandId}&spec[device]=${deviceSlug}&spec[model]=${model_slug}&spec[network]=${networkSlug}&spec[size]=${sizeSlug}`,
-            type: 'GET',
-            headers: {
-                'accept': 'application/json',
-                'x-api-key': 'khFohASwrgJm8oYSdfOaTZG7aq41mrzZg3GC8gsQbqAT7JzwHqDvorgbB13LadmN',
-                'x-tenant-id': 'a395524ecd10937b12b14e7ff33ea54e6d4d0b21d67568f518163aac0056b26b'
-            },
-            data: {
-                network: networkSlug,
-                size: sizeSlug
-            },
-            success: function(response) {
-                if (response.status_code === 200 && response.result?.conditions) {
-                    const conditions = response.result.conditions;
-                    const productId = response.result.product.product_id;
-                    let conditionsHtml = '';
-
-                    conditions.forEach(condition => {
-                        conditionsHtml += `
-                            <a href="#" class="spec-choices">
-                                <div class="card card--border card--active-primary spec-choice selected-${condition.id}">
-                                    <div class="spec-choice-container">
-                                        <div class="spec-choice-content">
-                                            <div>
-                                                <div class="collapse-default">
-                                                <div class="collapse-container">
-                                                    <span class="collapse-head">
-                                                        <div class="text-center">${condition.name}</div>
-                                                    </span>
+                conditions.forEach((condition, index) => {
+                    conditionsHtml += `
+                        <div class="spec-choices">
+                            <div class="card card--border card--active-primary spec-choice selected-${condition.id}">
+                                <div class="spec-choice-container">
+                                    <div class="spec-choice-content">
+                                        <div class="collapse-default">
+                                            <div class="collapse-container" onclick="toggleAccordion(${index})">
+                                                <div class="collapse-head d-flex justify-content-between align-items-center p-3">
+                                                    <div class="condition-name">${condition.name}(${condition.price})</div>
+                                                    <div class="condition-price"></div>
+                                                    <span class="accordion-icon">▼</span>
                                                 </div>
-                                                <div class="spec-terms">
-                                                    <p class="spec-terms-title">${condition.terms.title}</p>
-                                                    <ul class="spec-terms-list">
-                                                        ${condition.terms.content.map(term => `
-                                                            <li class="spec-terms-list-container">
-                                                                <div class="spec-terms-list">
-                                                                    <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="spec-terms-list-icon">
-                                                                        <path fill="currentColor" d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10s10-4.5 10-10S17.5 2 12 2m-2 15l-5-5l1.41-1.41L10 14.17l7.59-7.59L19 8z"></path>
-                                                                    </svg>
-                                                                </div>
-                                                                <span>${term}</span>
-                                                            </li>
-                                                        `).join('')}
-                                                    </ul>
-                                                    <div class="spec-terms-button button button--color button--weight button-size button--color_secondary"
-                                                        onclick="handleConditionClick('${productId}','${condition.id}','${condition.name}', '${condition.price}')">
-                                                        Confirm Condition
-                                                    </div>
+                                            </div>
+                                            <div class="spec-terms collapse" id="condition-content-${index}">
+                                                <p class="spec-terms-title">${condition.terms.title}</p>
+                                                <ul class="spec-terms-list">
+                                                    ${condition.terms.content.map(term => `
+                                                        <li class="spec-terms-list-container">
+                                                            <div class="spec-terms-list">
+                                                                <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="spec-terms-list-icon">
+                                                                    <path fill="currentColor" d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10s10-4.5 10-10S17.5 2 12 2m-2 15l-5-5l1.41-1.41L10 14.17l7.59-7.59L19 8z"></path>
+                                                                </svg>
+                                                            </div>
+                                                            <span>${term}</span>
+                                                        </li>
+                                                    `).join('')}
+                                                </ul>
+                                                <div class="spec-terms-button button button--color button--weight button-size button--color_secondary"
+                                                    onclick="handleConditionClick('${productId}','${condition.id}','${condition.name}', '${condition.price}')">
+                                                    Confirm Condition
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </a>
+                        </div>
                     `;
                 });
 
-                            conditionsSection.innerHTML = conditionsHtml;
-                        } else {
-                            conditionsSection.innerHTML = '<div class="text-center text-danger">Error loading condition options</div>';
-                        }
-                    },
-                    error: function(xhr, status, error) {
-                        conditionsSection.innerHTML = '<div class="text-center text-danger">Failed to load condition options</div>';
-                        console.error('Error:', error);
+                conditionsSection.innerHTML = conditionsHtml;
+
+                // Add necessary CSS
+                const style = document.createElement('style');
+                style.textContent = `
+                    .collapse-head {
+                        cursor: pointer;
                     }
-                });
+                    .collapse {
+                        display: none;
+                        padding: 1rem;
+                    }
+                    .collapse.show {
+                        display: block;
+                    }
+                    .accordion-icon {
+                        transition: transform 0.3s ease;
+                    }
+                    .accordion-icon.rotated {
+                        transform: rotate(180deg);
+                    }
+                `;
+                document.head.appendChild(style);
+
+            } else {
+                conditionsSection.innerHTML = '<div class="text-center text-danger">Error loading condition options</div>';
             }
+        },
+        error: function(xhr, status, error) {
+            conditionsSection.innerHTML = '<div class="text-center text-danger">Failed to load condition options</div>';
+            console.error('Error:', error);
+        }
+    });
+}
+
+// Add this function to handle the accordion toggle
+function toggleAccordion(index) {
+    const content = document.getElementById(`condition-content-${index}`);
+    const icon = content.parentElement.querySelector('.accordion-icon');
+
+    // Close all other accordions
+    document.querySelectorAll('.spec-terms.collapse.show').forEach(item => {
+        if (item.id !== `condition-content-${index}`) {
+            item.classList.remove('show');
+            item.parentElement.querySelector('.accordion-icon').classList.remove('rotated');
+        }
+    });
+
+    // Toggle the clicked accordion
+    content.classList.toggle('show');
+    icon.classList.toggle('rotated');
+}
 
             // let productId;
             // let conditionId;
