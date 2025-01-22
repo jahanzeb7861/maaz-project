@@ -431,8 +431,8 @@ $banners = getContent('banner.element');
                         //         },
                         //         headers: {
                         //             'accept': 'application/json',
-                        //             'x-api-key': 'khFohASwrgJm8oYSdfOaTZG7aq41mrzZg3GC8gsQbqAT7JzwHqDvorgbB13LadmN',
-                        //             'x-tenant-id': 'a395524ecd10937b12b14e7ff33ea54e6d4d0b21d67568f518163aac0056b26b'
+                        //             'x-api-key': '3BaXHRZ0UyiRVoB7TGCkIQfpw9VyKks4qcq21o6AUTIhI3v9X9h222qqzc4G1NMG',
+                        //             'x-tenant-id': '2146eb8fc7c3b4e45bbbded7eac03dd2df3ba98824f2defde0250173b223bbd7'
                         //         },
                         //         data: {
                         //             network: networkSlug
@@ -481,7 +481,8 @@ $banners = getContent('banner.element');
             // };
 
             var data = {
-                        "payment_method":"Store Credit",
+                        // "payment_method":"Store Credit",
+                        "payment_method":"Cash",
                         "order_detail":[
                                 {
                                 "product_id":localStorage.getItem('productId'),
@@ -504,8 +505,8 @@ $banners = getContent('banner.element');
                 data: data,
                 headers: {
                             'accept': 'application/json',
-                            'x-api-key': 'khFohASwrgJm8oYSdfOaTZG7aq41mrzZg3GC8gsQbqAT7JzwHqDvorgbB13LadmN',
-                            'x-tenant-id': 'a395524ecd10937b12b14e7ff33ea54e6d4d0b21d67568f518163aac0056b26b'
+                            'x-api-key': '3BaXHRZ0UyiRVoB7TGCkIQfpw9VyKks4qcq21o6AUTIhI3v9X9h222qqzc4G1NMG',
+                            'x-tenant-id': '2146eb8fc7c3b4e45bbbded7eac03dd2df3ba98824f2defde0250173b223bbd7'
                         },
                 success: function(response) {
                     // handle response
@@ -554,8 +555,8 @@ $banners = getContent('banner.element');
             type: 'GET',
             headers: {
                 'accept': 'application/json',
-                'x-api-key': 'khFohASwrgJm8oYSdfOaTZG7aq41mrzZg3GC8gsQbqAT7JzwHqDvorgbB13LadmN',
-                'x-tenant-id': 'a395524ecd10937b12b14e7ff33ea54e6d4d0b21d67568f518163aac0056b26b'
+                'x-api-key': '3BaXHRZ0UyiRVoB7TGCkIQfpw9VyKks4qcq21o6AUTIhI3v9X9h222qqzc4G1NMG',
+                'x-tenant-id': '2146eb8fc7c3b4e45bbbded7eac03dd2df3ba98824f2defde0250173b223bbd7'
             },
             data: {
                 network: networkSlug
@@ -631,8 +632,8 @@ $banners = getContent('banner.element');
         type: 'GET',
         headers: {
             'accept': 'application/json',
-            'x-api-key': 'khFohASwrgJm8oYSdfOaTZG7aq41mrzZg3GC8gsQbqAT7JzwHqDvorgbB13LadmN',
-            'x-tenant-id': 'a395524ecd10937b12b14e7ff33ea54e6d4d0b21d67568f518163aac0056b26b'
+            'x-api-key': '3BaXHRZ0UyiRVoB7TGCkIQfpw9VyKks4qcq21o6AUTIhI3v9X9h222qqzc4G1NMG',
+            'x-tenant-id': '2146eb8fc7c3b4e45bbbded7eac03dd2df3ba98824f2defde0250173b223bbd7'
         },
         data: {
             network: networkSlug,
@@ -815,8 +816,8 @@ function toggleAccordion(index) {
                     //             },
                     //             headers: {
                     //                 'accept': 'application/json',
-                    //                 'x-api-key': 'khFohASwrgJm8oYSdfOaTZG7aq41mrzZg3GC8gsQbqAT7JzwHqDvorgbB13LadmN',
-                    //                 'x-tenant-id': 'a395524ecd10937b12b14e7ff33ea54e6d4d0b21d67568f518163aac0056b26b'
+                    //                 'x-api-key': '3BaXHRZ0UyiRVoB7TGCkIQfpw9VyKks4qcq21o6AUTIhI3v9X9h222qqzc4G1NMG',
+                    //                 'x-tenant-id': '2146eb8fc7c3b4e45bbbded7eac03dd2df3ba98824f2defde0250173b223bbd7'
                     //             },
                     //             data: {
                     //                 network: networkSlug

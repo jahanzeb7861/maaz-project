@@ -90,13 +90,30 @@ margin:0 !important;">
         </div>
 
 
+        <!-- Maaz Widget Code START -->
+
+     <script src="https://widget.reusely.com/v3.js"></script>
+    <div class="buyback-widget"></div>
+    <script defer>
+        new Buyback({
+            tenantId: "2146eb8fc7c3b4e45bbbded7eac03dd2df3ba98824f2defde0250173b223bbd7",
+            apiKey: "3BaXHRZ0UyiRVoB7TGCkIQfpw9VyKks4qcq21o6AUTIhI3v9X9h222qqzc4G1NMG",
+            disableFloatButton: false
+        })
+    </script>
+
+
+        <!-- Maaz Widget Code END -->
+
+
+
 
         <!-- <script src="https://widget.reusely.com/v3.js"></script>
         <div class="buyback-widget" style="background: bottom !important;"></div>
         <script defer>
             new Buyback({
-                tenantId: "a395524ecd10937b12b14e7ff33ea54e6d4d0b21d67568f518163aac0056b26b",
-                apiKey: "khFohASwrgJm8oYSdfOaTZG7aq41mrzZg3GC8gsQbqAT7JzwHqDvorgbB13LadmN",
+                tenantId: "2146eb8fc7c3b4e45bbbded7eac03dd2df3ba98824f2defde0250173b223bbd7",
+                apiKey: "3BaXHRZ0UyiRVoB7TGCkIQfpw9VyKks4qcq21o6AUTIhI3v9X9h222qqzc4G1NMG",
                 disableFloatButton: false
             })
 
@@ -119,8 +136,9 @@ margin:0 !important;">
 
         </div> -->
 
+        <!-- UNCOMMENT THIS -->
 
-        <div class="row justify-content-center">
+        <!-- <div class="row justify-content-center">
         @foreach($categories as $category)
         <a href="{{ route('category.show', ['slug' => $category->slug]) }}" class="col-xl-2 col-sm-6 col-lg-3 text-center my-4 mx-2"
             style="background: #fff; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); padding: 20px; display: flex; border-radius: 10px; flex-direction: column; justify-content: center; text-decoration: none;">
@@ -130,7 +148,7 @@ margin:0 !important;">
             <h4 class="my-3">{{ $category->name }}</h4>
         </a>
         @endforeach
-        </div>
+        </div> -->
 
 
     </div>

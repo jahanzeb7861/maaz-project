@@ -40,8 +40,8 @@ class SiteController extends Controller
         $response = $client->request('GET', 'https://api.reusely.com/api/v2/public/catalog/category', [
           'headers' => [
             'accept' => 'application/json',
-            'x-api-key' => 'khFohASwrgJm8oYSdfOaTZG7aq41mrzZg3GC8gsQbqAT7JzwHqDvorgbB13LadmN',
-            'x-tenant-id' => 'a395524ecd10937b12b14e7ff33ea54e6d4d0b21d67568f518163aac0056b26b',
+            'x-api-key' => '3BaXHRZ0UyiRVoB7TGCkIQfpw9VyKks4qcq21o6AUTIhI3v9X9h222qqzc4G1NMG',
+            'x-tenant-id' => '2146eb8fc7c3b4e45bbbded7eac03dd2df3ba98824f2defde0250173b223bbd7',
           ],
         ]);
 
@@ -171,8 +171,8 @@ class SiteController extends Controller
         $response = $client->request('GET', 'https://api.reusely.com/api/v2/public/catalog/brand', [
           'headers' => [
             'accept' => 'application/json',
-            'x-api-key' => 'khFohASwrgJm8oYSdfOaTZG7aq41mrzZg3GC8gsQbqAT7JzwHqDvorgbB13LadmN',
-            'x-tenant-id' => 'a395524ecd10937b12b14e7ff33ea54e6d4d0b21d67568f518163aac0056b26b',
+            'x-api-key' => '3BaXHRZ0UyiRVoB7TGCkIQfpw9VyKks4qcq21o6AUTIhI3v9X9h222qqzc4G1NMG',
+            'x-tenant-id' => '2146eb8fc7c3b4e45bbbded7eac03dd2df3ba98824f2defde0250173b223bbd7',
           ],
         ]);
 
@@ -218,8 +218,8 @@ class SiteController extends Controller
         $responseDevices = $client->request('GET', 'https://api.reusely.com/api/v2/public/catalog/category-brand/'.$brandSlug, [
                 'headers' => [
                 'accept' => 'application/json',
-                'x-api-key' => 'khFohASwrgJm8oYSdfOaTZG7aq41mrzZg3GC8gsQbqAT7JzwHqDvorgbB13LadmN',
-                'x-tenant-id' => 'a395524ecd10937b12b14e7ff33ea54e6d4d0b21d67568f518163aac0056b26b',
+                'x-api-key' => '3BaXHRZ0UyiRVoB7TGCkIQfpw9VyKks4qcq21o6AUTIhI3v9X9h222qqzc4G1NMG',
+                'x-tenant-id' => '2146eb8fc7c3b4e45bbbded7eac03dd2df3ba98824f2defde0250173b223bbd7',
                 ],
         ]);
 
@@ -242,8 +242,8 @@ class SiteController extends Controller
         $responseModels = $client->request('GET', 'https://api.reusely.com/api/v2/public/catalog/model-device/'.$brandSlug.'/'.$devices[0]->slug, [
           'headers' => [
             'accept' => 'application/json',
-            'x-api-key' => 'khFohASwrgJm8oYSdfOaTZG7aq41mrzZg3GC8gsQbqAT7JzwHqDvorgbB13LadmN',
-            'x-tenant-id' => 'a395524ecd10937b12b14e7ff33ea54e6d4d0b21d67568f518163aac0056b26b',
+            'x-api-key' => '3BaXHRZ0UyiRVoB7TGCkIQfpw9VyKks4qcq21o6AUTIhI3v9X9h222qqzc4G1NMG',
+            'x-tenant-id' => '2146eb8fc7c3b4e45bbbded7eac03dd2df3ba98824f2defde0250173b223bbd7',
           ],
         ]);
 
@@ -271,8 +271,8 @@ class SiteController extends Controller
         $responseModelDetails = $client->request('GET', 'https://api.reusely.com/api/v2/public/catalog/model-device/'.$brandSlug.'/'.$models[0]->slug, [
           'headers' => [
             'accept' => 'application/json',
-            'x-api-key' => 'khFohASwrgJm8oYSdfOaTZG7aq41mrzZg3GC8gsQbqAT7JzwHqDvorgbB13LadmN',
-            'x-tenant-id' => 'a395524ecd10937b12b14e7ff33ea54e6d4d0b21d67568f518163aac0056b26b',
+            'x-api-key' => '3BaXHRZ0UyiRVoB7TGCkIQfpw9VyKks4qcq21o6AUTIhI3v9X9h222qqzc4G1NMG',
+            'x-tenant-id' => '2146eb8fc7c3b4e45bbbded7eac03dd2df3ba98824f2defde0250173b223bbd7',
           ],
         ]);
 

@@ -30,9 +30,9 @@ class OrdersController extends Controller
         $responseModelDetails = $client->request('GET', 'https://api.reusely.com/api/v2/admin/orders?buyback_type=mail-in', [
           'headers' => [
                 'accept' => 'application/json',
-                'x-api-key' => 'khFohASwrgJm8oYSdfOaTZG7aq41mrzZg3GC8gsQbqAT7JzwHqDvorgbB13LadmN',
+                'x-api-key' => '3BaXHRZ0UyiRVoB7TGCkIQfpw9VyKks4qcq21o6AUTIhI3v9X9h222qqzc4G1NMG',
                 'x-secret-key' => 'sm89Bwi8bf0UPaDV4dtKKJjVbHXLkJiCYCoDKuqcZDsfUoMbggZ3W7Q7niGmb7S0',
-                'x-tenant-id' => 'a395524ecd10937b12b14e7ff33ea54e6d4d0b21d67568f518163aac0056b26b',
+                'x-tenant-id' => '2146eb8fc7c3b4e45bbbded7eac03dd2df3ba98824f2defde0250173b223bbd7',
             ],
         ]);
 

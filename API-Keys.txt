@@ -1,5 +1,26 @@
 Secret Key: sm89Bwi8bf0UPaDV4dtKKJjVbHXLkJiCYCoDKuqcZDsfUoMbggZ3W7Q7niGmb7S0
 
-Tenant ID: a395524ecd10937b12b14e7ff33ea54e6d4d0b21d67568f518163aac0056b26b
+Tenant ID: 2146eb8fc7c3b4e45bbbded7eac03dd2df3ba98824f2defde0250173b223bbd7
 
-Public API Key: khFohASwrgJm8oYSdfOaTZG7aq41mrzZg3GC8gsQbqAT7JzwHqDvorgbB13LadmN
+Public API Key: 3BaXHRZ0UyiRVoB7TGCkIQfpw9VyKks4qcq21o6AUTIhI3v9X9h222qqzc4G1NMG
+
+
+MY KEYS:
+
+x-api-key: :3BaXHRZ0UyiRVoB7TGCkIQfpw9VyKks4qcq21o6AUTIhI3v9X9h222qqzc4G1NMG
+x-tenant-id: 2146eb8fc7c3b4e45bbbded7eac03dd2df3ba98824f2defde0250173b223bbd7
+x-secret-key: sm89Bwi8bf0UPaDV4dtKKJjVbHXLkJiCYCoDKuqcZDsfUoMbggZ3W7Q7niGmb7S0
+
+
+
+
+MOBILE MOBILE KEY:
+
+x-api-key: :KJPsCWsUxdtOdT7SrgyncjM85QKjfzk8yV6QwZ44lJZT6nBAwQynFa17OM8TP7BW
+x-tenant-id: cfe99bd19c052ae886688d235692ab43bc45ddac7f285141df16c0ad0a52c008
+x-xsrf-token: 65b21582340b6145eb04a666f9424fad
+
+MAAZ KEY:
+
+x-api-key: :3BaXHRZ0UyiRVoB7TGCkIQfpw9VyKks4qcq21o6AUTIhI3v9X9h222qqzc4G1NMG
+x-tenant-id: 2146eb8fc7c3b4e45bbbded7eac03dd2df3ba98824f2defde0250173b223bbd7
